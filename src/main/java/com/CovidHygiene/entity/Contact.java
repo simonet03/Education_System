@@ -1,5 +1,9 @@
 package com.CovidHygiene.entity;
 
+//Damien Mally - 216279585
+
+
+
 public class Contact {
     private long cellPhone, homePhone;
     private String email;

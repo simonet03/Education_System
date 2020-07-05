@@ -1,5 +1,7 @@
 package com.CovidHygiene.entity;
 
+//Damien Mally - 216279585
+
 public class Student {
     private long studentNum;
     private String firstName, lastName, address;

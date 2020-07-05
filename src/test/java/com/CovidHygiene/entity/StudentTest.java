@@ -1,5 +1,7 @@
 package com.CovidHygiene.entity;
 
+//Damien Mally - 216279585
+
 import org.junit.Test;
 
 public class StudentTest {
