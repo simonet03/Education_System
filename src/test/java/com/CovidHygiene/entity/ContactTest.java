@@ -16,5 +16,4 @@ public class ContactTest {
 
         System.out.println(cont.toString());
     }
-
 }
