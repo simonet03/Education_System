@@ -3,8 +3,8 @@ package com.CovidHygiene.entity;
 //Damien Mally - 216279585
 
 public class Student {
-    private long studentNum;
-    private String firstName, lastName, address;
+
+    private String studentNum, firstName, lastName, address;
 
 
     private Student(Builder builder){
@@ -15,7 +15,7 @@ public class Student {
 
     }
 
-    public long getStudentNum() {
+    public String getStudentNum() {
         return studentNum;
     }
 
@@ -49,11 +49,10 @@ public class Student {
 
     //=================================================
     public static class Builder{
-        private long studentNum;
-        private String firstName, lastName, address;
+        private String studentNum, firstName, lastName, address;
 
 
-        public Builder setStudentNum(long studentNum){
+        public Builder setStudentNum(String studentNum){
             this.studentNum = studentNum;
             return this;
         }
