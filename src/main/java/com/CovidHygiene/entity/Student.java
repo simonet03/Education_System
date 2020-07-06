@@ -2,9 +2,11 @@ package com.CovidHygiene.entity;
 
 //Damien Mally - 216279585
 
+import java.util.Objects;
+
 public class Student {
-    private long studentNum;
-    private String firstName, lastName, address;
+
+    private String studentNum, firstName, lastName, address;
 
 
     private Student(Builder builder){
@@ -15,7 +17,7 @@ public class Student {
 
     }
 
-    public long getStudentNum() {
+    public String getStudentNum() {
         return studentNum;
     }
 
@@ -46,14 +48,32 @@ public class Student {
 
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(studentNum, student.studentNum) &&
+                Objects.equals(firstName, student.firstName) &&
+                Objects.equals(lastName, student.lastName) &&
+                Objects.equals(address, student.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentNum, firstName, lastName, address);
+    }
+
+
+
+
 
     //=================================================
     public static class Builder{
-        private long studentNum;
-        private String firstName, lastName, address;
+        private String studentNum, firstName, lastName, address;
 
 
-        public Builder setStudentNum(long studentNum){
+        public Builder setStudentNum(String studentNum){
             this.studentNum = studentNum;
             return this;
         }
