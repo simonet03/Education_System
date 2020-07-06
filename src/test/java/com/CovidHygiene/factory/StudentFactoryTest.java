@@ -30,4 +30,14 @@ public class StudentFactoryTest {
     }
 
 
+    @Test
+    public void testEquals() {
+
+        Student student1 = StudentFactory.createStudent("Damien", "Mally", "Cape Town, South Africa, Earth");
+
+        Student student2 = StudentFactory.createStudent("Damien", "Mally", "Cape Town, South Africa, Earth");
+
+        student1.equals(student2);
+    }
+
 }

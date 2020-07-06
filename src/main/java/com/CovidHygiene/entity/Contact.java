@@ -3,6 +3,7 @@ package com.CovidHygiene.entity;
 //Damien Mally - 216279585
 
 
+import java.util.Objects;
 
 public class Contact {
     private long cellPhone, homePhone;
@@ -37,6 +38,20 @@ public class Contact {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return cellPhone == contact.cellPhone &&
+                homePhone == contact.homePhone &&
+                Objects.equals(email, contact.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cellPhone, homePhone, email);
+    }
 
     //===========Builder class==============
     //===========Same variables=============

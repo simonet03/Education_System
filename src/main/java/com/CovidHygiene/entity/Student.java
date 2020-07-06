@@ -2,6 +2,8 @@ package com.CovidHygiene.entity;
 
 //Damien Mally - 216279585
 
+import java.util.Objects;
+
 public class Student {
 
     private String studentNum, firstName, lastName, address;
@@ -43,6 +45,25 @@ public class Student {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(studentNum, student.studentNum) &&
+                Objects.equals(firstName, student.firstName) &&
+                Objects.equals(lastName, student.lastName) &&
+                Objects.equals(address, student.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentNum, firstName, lastName, address);
+    }
+
 
 
 
