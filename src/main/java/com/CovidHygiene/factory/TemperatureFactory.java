@@ -4,10 +4,9 @@ import com.CovidHygiene.entity.Temperature;
 
 public class TemperatureFactory {
 
-    public static Temperature buildTemperature(double enteringTemp, double exitingTemp) {
+    public static Temperature buildTemperature(double enteringTemp) {
         return new Temperature.Builder()
                 .setEnteringTemp(enteringTemp)
-                .setExitingTemp(exitingTemp)
                 .build();
 
     }
