@@ -93,6 +93,16 @@ public class Student {
             return this;
         }
 
+
+        //==============copy method=================
+        public Builder copy(Student newStudent){
+            this.studentNum = newStudent.studentNum;
+            this.firstName = newStudent.firstName;
+            this.lastName = newStudent.lastName;
+            this.address = newStudent.address;
+            return this;
+        }
+
         public Student build(){
             return new Student(this);
         }
