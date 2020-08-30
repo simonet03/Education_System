@@ -43,4 +43,6 @@ public class GenerateTest {
         String randomCleanerNumber = Generate.getRandomCleanerNumber();
         System.out.println(randomCleanerNumber);
     }
+
+
 }

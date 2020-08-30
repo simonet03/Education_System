@@ -4,12 +4,7 @@ public class Lecturer {
     private long lecturerNum;
     private String firstName, lastName, address;
 
-    //    public Lecturer(long lecturerNum, String firstName, String lastName, String address) {
-//        this.lecturerNum = lecturerNum;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.address = address;
-//    }
+
     private Lecturer(Builder builder){
         this.lecturerNum = builder.lecturerNum;
         this.firstName = builder.firstName;

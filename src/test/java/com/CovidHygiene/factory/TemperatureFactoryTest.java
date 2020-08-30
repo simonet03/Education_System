@@ -12,7 +12,7 @@ public class TemperatureFactoryTest {
 
     @Test
     public void buildTemperature(){
-        Temperature temp = TemperatureFactory.buildTemperature(37.2, 37.3);
+        Temperature temp = TemperatureFactory.buildTemperature(37.2);
         Assert.assertNotNull(temp);
 
     }
