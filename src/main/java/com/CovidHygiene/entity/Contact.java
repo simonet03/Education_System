@@ -75,6 +75,16 @@ public class Contact {
             return this;
         }
 
+        //===============copy method===================
+        public Builder copy(Contact newContact) {
+            this.cellPhone = newContact.cellPhone;
+            this.homePhone = newContact.homePhone;
+            this.email = newContact.email;
+
+            return this;
+        }
+
+
         //======returns new Contact=======
         public Contact build(){
             return new Contact(this);
