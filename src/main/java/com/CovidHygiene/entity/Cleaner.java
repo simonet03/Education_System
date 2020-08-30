@@ -6,7 +6,7 @@ public class Cleaner {
     private String lastName;
     private String address;
 
-    private Cleaner(Cleaner.Builder builder){
+    public Cleaner(Cleaner.Builder builder){
         this.cleanerNum = builder.cleanerNum;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
@@ -67,6 +67,10 @@ public class Cleaner {
             return new Cleaner(this);
         }
 
+        public Builder copy(Cleaner cleaner) {
+            this.cleanerNum = cleaner.cleanerNum;
+            return this;
+        }
     }
 
 }
