@@ -1,8 +1,8 @@
 package com.CovidHygiene.entity;
 
 public class Lecturer {
-    private long lecturerNum;
-    private String firstName, lastName, address;
+    //private long lecturerNum;
+    private String lecturerNum, firstName, lastName, address;
 
 
     private Lecturer(Builder builder){
@@ -12,7 +12,7 @@ public class Lecturer {
         this.address = builder.address;
     }
 
-    public long getLecturerNum() {
+    public String getLecturerNum() {
         return lecturerNum;
     }
 
@@ -38,11 +38,12 @@ public class Lecturer {
                 '}';
     }
 
+
     public static class Builder{
-        public long lecturerNum;
+        public String lecturerNum;
         public String firstName, lastName, address;
 
-        public Builder setLecturerNum(long lecturerNum){
+        public Builder setLecturerNum(String lecturerNum){
             this.lecturerNum = lecturerNum;
             return this;
         }
@@ -57,6 +58,14 @@ public class Lecturer {
         public Builder setAddress(String address){
             this.address = address;
             return this;
+        }
+
+        public Builder copy(Lecturer newLecturer){
+            this.lecturerNum = newLecturer.lecturerNum;
+            this.firstName = newLecturer.firstName;
+            this.lastName = newLecturer.lastName;
+            this.address = newLecturer.address;
+                    return this;
         }
 
         public Lecturer build(){
