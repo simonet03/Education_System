@@ -2,12 +2,11 @@ package com.CovidHygiene.repository.user.impl;
 
 import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.factory.AdminFactory;
+import com.CovidHygiene.repository.user.AdminRepository;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 

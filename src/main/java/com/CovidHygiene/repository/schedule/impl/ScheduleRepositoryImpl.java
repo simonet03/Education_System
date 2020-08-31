@@ -45,10 +45,14 @@ public class ScheduleRepositoryImpl implements ScheduleRepository{
     }
 
     @Override
-    public void delete(Integer classNum){
+    public boolean delete(Integer classNum){
         Schedule oldSchedule = read(classNum);
-        if (oldSchedule != null)
+        if (oldSchedule != null) {
             schedules.remove(oldSchedule);
+            return true;
+        }
+        return false;
+
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.CovidHygiene.repository.user.impl;
 
 import com.CovidHygiene.entity.Admin;
+import com.CovidHygiene.repository.user.AdminRepository;
 
 import java.util.HashSet;
 import java.util.Set;
