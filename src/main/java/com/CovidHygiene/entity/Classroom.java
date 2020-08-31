@@ -67,6 +67,15 @@ public class Classroom {
             return this;
         }
 
+        public Builder copy(Classroom classroom){
+            this.booked = classroom.booked;
+            this.classroomNum = classroom.classroomNum;
+            this.numOfSeats = classroom.numOfSeats;
+            this.sanitizingStation = classroom.sanitizingStation;
+            return this;
+
+        }
+
         public Classroom build(){
             return new Classroom(this);
         }

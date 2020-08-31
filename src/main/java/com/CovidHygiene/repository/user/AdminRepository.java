@@ -1,4 +1,4 @@
-package com.CovidHygiene.repository.user.impl;
+package com.CovidHygiene.repository.user;
 
 import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.repository.IRepository;
