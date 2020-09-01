@@ -39,6 +39,7 @@ public class Admin {
     public static class Builder {
         private String adminNum, firstName, lastName, address;
 
+
         public Builder setAdminNum(String adminNum) {
             this.adminNum = adminNum;
             return this;
@@ -63,5 +64,12 @@ public class Admin {
             return new Admin(this);
         }
 
+        public Builder copy(Admin admin) {
+            this.adminNum = admin.adminNum;
+            this.firstName = admin.firstName;
+            this.lastName = admin.lastName;
+            this.address = admin.address;
+            return this;
+        }
     }
 }

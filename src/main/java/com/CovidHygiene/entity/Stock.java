@@ -42,6 +42,10 @@ public class Stock {
             return new Stock(this);
         }
 
+        public Builder copy(Stock stock) {
+            this.numOfStock = stock.numOfStock;
+            return this;
+        }
     }
 }
 
