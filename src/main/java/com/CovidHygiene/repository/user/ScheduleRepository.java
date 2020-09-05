@@ -1,4 +1,4 @@
-package com.CovidHygiene.repository.schedule;
+package com.CovidHygiene.repository.user;
 
 import com.CovidHygiene.entity.Schedule;
 import com.CovidHygiene.repository.IRepository;
