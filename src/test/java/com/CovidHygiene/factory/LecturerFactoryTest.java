@@ -9,7 +9,7 @@ public class LecturerFactoryTest {
 
     @Test
     public void buildLecturer() {
-        Lecturer lect = LecturerFactory.buildLecturer("12345678","Leon", "Small", "123, Darling Street, Cape Town");
+        Lecturer lect = LecturerFactory.buildLecturer("12345678","Leon", "Small", "02, Adderley St");
         assertNotNull(lect);
     }
 }
