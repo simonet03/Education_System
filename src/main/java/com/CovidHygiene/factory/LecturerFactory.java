@@ -7,6 +7,7 @@ public class LecturerFactory {
         return new Lecturer.Builder()
                 .setLecturerNum(lecturerNum)
                 .setFirstName(firstName)
-                .setLastName(lastName).setAddress(address).build();
+                .setLastName(lastName).setAddress(address)
+                .build();
     }
 }
