@@ -40,7 +40,7 @@ public class Classroom {
                 ", booked=" + booked +
                 ", numOfSeats=" + numOfSeats +
                 ", sanitizingStation=" + sanitizingStation +
-                '}';
+                '}'+"\n";
     }
 
     public static class Builder{

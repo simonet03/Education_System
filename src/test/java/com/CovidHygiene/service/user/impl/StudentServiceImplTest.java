@@ -1,16 +1,15 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Student;
 import com.CovidHygiene.factory.StudentFactory;
 import com.CovidHygiene.service.user.StudentService;
+import com.CovidHygiene.service.user.impl.StudentServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 

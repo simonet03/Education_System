@@ -1,15 +1,13 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Contact;
 import com.CovidHygiene.factory.ContactFactory;
-import com.CovidHygiene.repository.user.impl.ContactRepositoryImpl;
 import com.CovidHygiene.service.user.ContactService;
+import com.CovidHygiene.service.user.impl.ContactServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
