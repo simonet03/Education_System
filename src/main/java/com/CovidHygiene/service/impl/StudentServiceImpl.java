@@ -5,6 +5,7 @@ import com.CovidHygiene.repository.user.StudentRepository;
 import com.CovidHygiene.repository.user.impl.StudentRepositoryImpl;
 import com.CovidHygiene.service.user.StudentService;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class StudentServiceImpl implements StudentService {
@@ -27,6 +28,48 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Set<Student> getAll() {
         return this.repository.getAll();
+    }
+
+    @Override
+    public Set<Student> getStudentsByFirstName(String name) {
+        Set<Student> studentNames = getAll();
+        Set<Student> studentNew = new HashSet<>();
+
+        for (Student a : studentNames){
+            if(a.getFirstName().trim().equalsIgnoreCase(name)){
+                studentNew.add(a);
+            }
+        }
+        return studentNew;
+    }
+
+    @Override
+    public Set<Student> getStudentsByLastName(String name) {
+        Set<Student> studentSurnames = getAll();
+        Set<Student> studentNew = new HashSet<>();
+
+        for (Student b : studentSurnames){
+            if(b.getLastName().trim().equalsIgnoreCase(name)){
+                studentNew.add(b);
+            }
+        }
+        return studentNew;
+    }
+
+    @Override
+    public Set<Student> getNamesThatStartWith(String a) {
+        Set<Student> students = getAll();
+        Set<Student> studentNew = new HashSet<>();
+
+        char letter = a.charAt(0);
+        String newLetter = Character.toString(letter);
+
+        for (Student c : students){
+            if(c.getFirstName().toLowerCase().startsWith(newLetter)){
+                studentNew.add(c);
+            }
+        }
+        return studentNew;
     }
 
     @Override
