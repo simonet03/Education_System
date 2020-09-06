@@ -1,8 +1,9 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Temperature;
 import com.CovidHygiene.factory.TemperatureFactory;
 import com.CovidHygiene.service.user.TemperatureService;
+import com.CovidHygiene.service.user.impl.TemperatureServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

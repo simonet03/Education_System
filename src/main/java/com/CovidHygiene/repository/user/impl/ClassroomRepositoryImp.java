@@ -7,6 +7,7 @@ package com.CovidHygiene.repository.user.impl;
 import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.repository.user.ClassroomRepository;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,8 @@ public class ClassroomRepositoryImp implements ClassroomRepository {
     private Set<Classroom> classroomDB;
 
     private ClassroomRepositoryImp(){
-        this.classroomDB = new HashSet<>();
+
+        this.classroomDB = new HashSet<>(); //When a repository get instantiated a classroomDb is created
     }
 
     public static ClassroomRepository getRepository(){

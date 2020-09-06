@@ -1,18 +1,15 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.factory.AdminFactory;
-import com.CovidHygiene.repository.IRepository;
 import com.CovidHygiene.service.user.AdminService;
+import com.CovidHygiene.service.user.impl.AdminServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import javax.swing.*;
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AdminServiceImplTest {
