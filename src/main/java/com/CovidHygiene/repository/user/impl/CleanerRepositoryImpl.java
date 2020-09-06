@@ -11,7 +11,7 @@ public class CleanerRepositoryImpl implements CleanerRepository {
     private static CleanerRepository cleanerRepo = null;
     public Set<Cleaner> cleanerDB;
 
-    private CleanerRepositoryImpl(){
+    public CleanerRepositoryImpl(){
         this.cleanerDB = new HashSet<>();
     }
 
