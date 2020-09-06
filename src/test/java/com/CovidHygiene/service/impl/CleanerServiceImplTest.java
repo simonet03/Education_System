@@ -20,7 +20,7 @@ public class CleanerServiceImplTest {
     @Test
     public void d_getAll(){
         Set<Cleaner> cleaner = cleanerService.getAll();
-        assertEquals(1, cleaner.size());
+        Assert.assertEquals(1, cleaner.size());
         System.out.println("All Cleaners: " + cleaner);
     }
 

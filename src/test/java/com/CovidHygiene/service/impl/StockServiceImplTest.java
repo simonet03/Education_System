@@ -19,7 +19,7 @@ public class StockServiceImplTest {
     @Test
     public void d_getAll(){
         Set<Stock> stock = stockService.getAll();
-        assertEquals(1, stock.size());
+        Assert.assertEquals(1, stock.size());
         System.out.println("All Stock: " + stock);
     }
 
