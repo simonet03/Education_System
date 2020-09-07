@@ -1,14 +1,13 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Lecturer;
 import com.CovidHygiene.factory.LecturerFactory;
 import com.CovidHygiene.service.user.LecturerService;
+import com.CovidHygiene.service.user.impl.LecturerServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 public class LecturerServiceImplTest {
     private static LecturerService service = LecturerServiceImpl.getService();
