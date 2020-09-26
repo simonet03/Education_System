@@ -10,4 +10,7 @@ public interface ClassroomService extends IService<Classroom, Integer> {
 
     Set<Classroom> getAll();
     Set<Classroom> allSanitizedClassrooms();
+    Set<Classroom> allNotSanitizedClassrooms();
+    Set<Classroom> allBookedClassrooms();
+    Set<Classroom> allNotBookedClassrooms();
 }
