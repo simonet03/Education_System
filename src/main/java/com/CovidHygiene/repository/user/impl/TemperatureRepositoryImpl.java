@@ -24,12 +24,6 @@ public class TemperatureRepositoryImpl implements TemperatureRepository {
         return tempDB;
     }
 
-    //business logic
-    @Override
-    public Set<Temperature> getAboveAvg() {
-        return tempDB;
-    }
-
     @Override
     public Temperature create(Temperature temperature) {
         this.tempDB.add(temperature);
