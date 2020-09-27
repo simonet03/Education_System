@@ -3,12 +3,15 @@ package com.CovidHygiene.entity;
 //Damien Mally - 216279585
 
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Contact {
+public class Contact implements Serializable {
     private long cellPhone, homePhone;
     private String email;
 
+
+    private Contact(){}
 
     private Contact(Builder builder){
         this.cellPhone = builder.cellPhone;
