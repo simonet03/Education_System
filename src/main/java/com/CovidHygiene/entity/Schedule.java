@@ -11,6 +11,8 @@ public class Schedule {
     private boolean bookedForTeach;
     private boolean bookedForSanti;
 
+    public Schedule(){}
+
     public Schedule(ScheduleBuilder scheduleBuilder){
         this.classroomNum = scheduleBuilder.classroomNum;
         this.dayPicked = scheduleBuilder.dayPicked;
