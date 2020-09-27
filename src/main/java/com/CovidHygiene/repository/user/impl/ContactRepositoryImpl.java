@@ -36,7 +36,7 @@ public class ContactRepositoryImpl implements ContactRepository {
 
 
     @Override
-    public Contact read(Long number) {
+    public Contact read(String number) {
 
         for(Contact contact : this.contactDB){
             if(contact.getCellPhone() == number){

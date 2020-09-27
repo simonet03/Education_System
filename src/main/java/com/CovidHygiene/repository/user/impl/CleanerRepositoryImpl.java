@@ -27,7 +27,7 @@ public class CleanerRepositoryImpl implements CleanerRepository {
             }
 
             @Override
-            public Cleaner read(Long aLong) {
+            public Cleaner read(String aLong) {
                 for (Cleaner cleaner : this.cleanerDB) {
                     if (cleaner.getCleanerNum() == aLong)
                 return cleaner;

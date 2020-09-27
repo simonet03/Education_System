@@ -7,7 +7,6 @@ package com.CovidHygiene.repository.user.impl;
 import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.repository.user.ClassroomRepository;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,7 +33,7 @@ public class ClassroomRepositoryImp implements ClassroomRepository {
     }
 
     @Override
-    public Classroom read(Integer classroomNum) {
+    public Classroom read(String classroomNum) {
         for( Classroom classroom: this.classroomDB){
             if(classroom.getClassroomNum() == (classroomNum)){
                 return classroom;

@@ -7,7 +7,6 @@ import com.CovidHygiene.service.user.TemperatureService;
 
 
 import java.util.Set;
-import java.util.TreeSet;
 
 public class TemperatureServiceImpl implements TemperatureService {
 
@@ -39,7 +38,7 @@ public class TemperatureServiceImpl implements TemperatureService {
     }
 
     @Override
-    public Temperature read(Double id) {
+    public Temperature read(String id) {
         return this.temperatureRepository.read(id);
     }
 
