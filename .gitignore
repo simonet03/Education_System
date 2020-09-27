@@ -1,0 +1,4 @@
+#IDE specific files to ignore(iml, ect);
+.idea/
+Education_System.iml
+target/
