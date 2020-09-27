@@ -4,9 +4,11 @@ import com.CovidHygiene.entity.Contact;
 import com.CovidHygiene.repository.user.ContactRepository;
 import com.CovidHygiene.repository.user.impl.ContactRepositoryImpl;
 import com.CovidHygiene.service.user.ContactService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class ContactServiceImpl implements ContactService {
 
 
