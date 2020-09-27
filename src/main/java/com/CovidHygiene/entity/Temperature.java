@@ -1,8 +1,14 @@
 package com.CovidHygiene.entity;
 
-public class Temperature {
+import java.io.Serializable;
+
+public class Temperature implements Serializable {
+
+
 
     private double enteringTemp;
+
+    private Temperature(){}
 
     private Temperature(Builder builder) {
         this.enteringTemp = builder.enteringTemp;

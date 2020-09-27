@@ -7,6 +7,7 @@ import com.CovidHygiene.service.user.TemperatureService;
 
 
 import java.util.Set;
+import java.util.TreeSet;
 
 public class TemperatureServiceImpl implements TemperatureService {
 
@@ -26,6 +27,11 @@ public class TemperatureServiceImpl implements TemperatureService {
     public Set<Temperature> getAll() {
         return this.temperatureRepository.getAll();
     }
+
+    //business logic
+    @Override
+    public Set<Temperature> getAboveAvg() { return this.temperatureRepository.getAboveAvg();}
+
 
     @Override
     public Temperature create(Temperature temperature) {

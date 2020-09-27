@@ -1,4 +1,4 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.repository.user.CleanerRepository;

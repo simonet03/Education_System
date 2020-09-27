@@ -1,8 +1,9 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.factory.CleanerFactory;
 import com.CovidHygiene.service.user.CleanerService;
+import com.CovidHygiene.service.user.impl.CleanerServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

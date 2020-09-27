@@ -8,4 +8,6 @@ import java.util.Set;
 public interface TemperatureRepository extends IRepository<Temperature, Double> {
 
     Set<Temperature> getAll();
+    //business logic
+    Set<Temperature> getAboveAvg();
 }

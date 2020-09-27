@@ -9,6 +9,10 @@ public class Classroom {
     private Boolean booked, sanitizingStation;
     private int classroomNum, numOfSeats;
 
+    private Classroom(){
+
+    }
+
     private Classroom(Builder builder){
         this.classroomNum = builder.classroomNum;
         this.booked = builder.booked;

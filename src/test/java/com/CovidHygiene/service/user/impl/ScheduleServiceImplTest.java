@@ -1,8 +1,9 @@
-package com.CovidHygiene.service.impl;
+package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Schedule;
 import com.CovidHygiene.factory.ScheduleFactory;
 import com.CovidHygiene.service.user.ScheduleService;
+import com.CovidHygiene.service.user.impl.ScheduleServiceImpl;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
