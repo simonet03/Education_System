@@ -1,0 +1,4 @@
+# Hide on github
+.idea/
+Education_System.iml
+target/

@@ -59,11 +59,7 @@ public class TemperatureServiceImplTest {
         Assert.assertTrue(deleted);
     }
 
-    //ClassCastException
-    //solutions:
-    // 1. should work when db filled
-    //2. proposed fix = spring boot?
-    //otherwise - confused >.<
+
     @Test
     public void d_getAboveAvg() {
         Set<Temperature> temps= temperatureService.getAboveAvg();
