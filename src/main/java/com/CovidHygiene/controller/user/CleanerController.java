@@ -1,25 +1,23 @@
-package com.CovidHygiene.controller;
+package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.service.user.impl.CleanerServiceImpl;
 import com.CovidHygiene.factory.CleanerFactory;
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/Cleaner")
 
 public class CleanerController {
+        @Autowired
+        private CleanerServiceImpl cleanerService;
 
-        private final CleanerServiceImpl cleanerService;
-
-    public CleanerController(@Qualifier("CleanerServiceImpl") CleanerServiceImpl cleanerService) {
-        this.cleanerService = cleanerService;
-    }
-
-    @PostMapping("/create")
+                @PostMapping("/create")
                 public Cleaner create(@RequestBody Cleaner cleaner) {
 
                     Cleaner cl = CleanerFactory.buildCleaner(cleaner.getCleanerNum(), cleaner.getFirstName(),

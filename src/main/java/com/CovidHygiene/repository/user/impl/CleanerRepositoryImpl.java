@@ -26,12 +26,14 @@ public class CleanerRepositoryImpl implements CleanerRepository {
                 return cleaner;
             }
 
-            @Override
-            public Cleaner read(String aLong) {
+    @Override
+    public Cleaner read(String id) {
+        return null;
+    }
+
+    public Cleaner read(Long aLong) {
                 for (Cleaner cleaner : this.cleanerDB) {
-                    if (cleaner.getCleanerNum() == aLong)
-                return cleaner;
-            }
+                }
             return null;
         }
 

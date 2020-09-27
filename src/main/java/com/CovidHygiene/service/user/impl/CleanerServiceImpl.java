@@ -45,6 +45,11 @@ public class CleanerServiceImpl implements CleanerService{
         return this.cleanerRepository.update(cleaner);
     }
 
+    @Override
+    public boolean delete(Long aLong) {
+        return false;
+    }
+
 
     public boolean delete(String id){
         return this.cleanerRepository.delete(id);

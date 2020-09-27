@@ -1,30 +1,27 @@
-package com.CovidHygiene.controller;
+package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Stock;
 import com.CovidHygiene.service.user.impl.StockServiceImpl;
 import com.CovidHygiene.factory.StockFactory;
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Set;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/Stock")
 
 public class StockController {
+        @Autowired
+        private StockServiceImpl stockService;
 
-        private final StockServiceImpl stockService;
-
-    public StockController(@Qualifier("StockServiceImpl") StockServiceImpl stockService) {
-        this.stockService = stockService;
-    }
-
-    @PostMapping("/create")
+        @PostMapping("/create")
         public Stock create(@RequestBody Stock stock) {
 
             Stock s = StockFactory.buildStock(stock.getNumOfStock(), stock.getStockType());
             return stockService.create(s);
-        }
+    }
 
         @GetMapping("/read/{id}")
         public Stock read(@PathVariable String id) {

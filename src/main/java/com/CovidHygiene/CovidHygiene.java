@@ -1,9 +1,9 @@
 package com.CovidHygiene;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@EnableAutoConfiguration
+@SpringBootApplication
 public class CovidHygiene {
     public static void main(String[] args) {
         SpringApplication.run(CovidHygiene.class,args);

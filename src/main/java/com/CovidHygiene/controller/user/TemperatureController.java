@@ -1,4 +1,4 @@
-package com.CovidHygiene.controller;
+package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Temperature;
 import org.springframework.web.bind.annotation.*;
