@@ -9,10 +9,12 @@ import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.repository.user.ClassroomRepository;
 import com.CovidHygiene.repository.user.impl.ClassroomRepositoryImp;
 import com.CovidHygiene.service.user.ClassroomService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class ClassroomServiceImpl implements ClassroomService {
     private static ClassroomService service = null;
     private ClassroomRepository repository;
@@ -66,5 +68,43 @@ public class ClassroomServiceImpl implements ClassroomService {
             }
         }
         return sanitized;
+    }
+
+    public Set<Classroom> allNotSanitizedClassrooms(){
+        Set<Classroom> notSanitized = new HashSet();
+        Set<Classroom> classroomDb = repository.getAll();
+
+        for(Classroom  classroom: classroomDb){
+            if(classroom.getSanitizingStation().equals(false)){
+                notSanitized.add(classroom);
+            }
+        }
+        return notSanitized;
+    }
+
+    @Override
+    public Set<Classroom> allBookedClassrooms(){
+        Set<Classroom> bookedClassrooms = new HashSet();
+        Set<Classroom> classroomDb = repository.getAll();
+
+        for(Classroom  classroom: classroomDb){
+            if(classroom.getBooked().equals(true)){
+                bookedClassrooms.add(classroom);
+            }
+        }
+        return bookedClassrooms;
+    }
+
+    @Override
+    public Set<Classroom> allNotBookedClassrooms(){
+        Set<Classroom> notBookedClassrooms = new HashSet();
+        Set<Classroom> classroomDb = repository.getAll();
+
+        for(Classroom  classroom: classroomDb){
+            if(classroom.getBooked().equals(false)){
+                notBookedClassrooms.add(classroom);
+            }
+        }
+        return notBookedClassrooms;
     }
 }
