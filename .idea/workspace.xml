@@ -5,7 +5,140 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2012f5e1-c498-480e-af33-cfc7f5b56d5e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Education_System.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/CovidHygiene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/controller/user/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/controller/user/ScheduleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CovidHygiene/controller/user/AdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CovidHygiene/controller/user/ScheduleControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CovidHygiene/controller/user/TemperatureControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/CovidHygiene.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/controller/HomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/controller/TemperatureController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Admin$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Admin$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Classroom$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Classroom$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Classroom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Cleaner$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Cleaner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Contact$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Contact$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Contact.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Lecturer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Lecturer$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Lecturer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Schedule$ScheduleBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Schedule.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Stock$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Stock$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Stock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Student$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Student$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Student.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Temperature$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Temperature$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/entity/Temperature.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/AdminFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/ClassroomFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/CleanerFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/ContactFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/LecturerFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/ScheduleFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/StockFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/StudentFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/factory/TemperatureFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/IRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/AdminRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/ClassroomRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/CleanerRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/ContactRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/LecturerRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/ScheduleRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/StockRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/StudentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/TemperatureRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/AdminRepositoryImp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/ClassroomRepositoryImp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/CleanerRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/ContactRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/LecturerRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/ScheduleRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/StockRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/StudentRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/repository/user/impl/TemperatureRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/IService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/AdminService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/ClassroomService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/CleanerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/ContactService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/LecturerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/ScheduleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/StockService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/StudentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/TemperatureService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/AdminServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/ClassroomServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/CleanerServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/ContactServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/LecturerServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/ScheduleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/StockServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/StudentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/service/user/impl/TemperatureServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CovidHygiene/util/Generate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/AdminTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/ClassroomTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/CleanerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/ContactTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/LecturerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/ScheduleTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/StockTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/StudentTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/entity/TemperatureTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/AdminFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/ClassroomFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/CleanerFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/ContactFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/LecturerFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/ScheduleFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/StockFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/StudentFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/factory/TemperatureFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/AdminRepositoryImpTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/ClassroomRepositoryImpTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/CleanerRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/ContactRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/LecturerRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/ScheduleRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/StockRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/StudentRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/repository/user/impl/TemperatureRepositoryImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/AdminServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/ClassroomServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/CleanerServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/ContactServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/LecturerServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/ScheduleServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/StockServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/StudentServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/service/user/impl/TemperatureServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CovidHygiene/util/GenerateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/controller/user/TemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/controller/user/TemperatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/entity/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/entity/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/entity/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/service/user/impl/ScheduleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/service/user/impl/ScheduleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/service/user/impl/TemperatureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CovidHygiene/service/user/impl/TemperatureServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CovidHygiene/service/user/impl/TemperatureServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CovidHygiene/service/user/impl/TemperatureServiceImplTest.java" afterDir="false" />
     </list>
@@ -31,8 +164,13 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:/Program Files/JetBrains/IntelliJ IDEA Educational Edition 2020.2/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -48,9 +186,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -156,7 +298,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2012f5e1-c498-480e-af33-cfc7f5b56d5e" name="Default Changelist" comment="" />
@@ -164,8 +309,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598544032846</updated>
+      <workItem from="1601241369816" duration="2716000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="435" y="207" key="#Notifications" timestamp="1599603545211">
@@ -180,6 +329,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="412" y="173" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1598614259341" />
+    <state x="-1112" y="417" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1601241791219">
+      <screen x="-1920" y="3" width="1920" height="1050" />
+    </state>
+    <state x="-1112" y="417" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1050/-1920.3.1920.1050@-1920.3.1920.1050" timestamp="1601241791219" />
     <state x="363" y="119" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601030519719">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -236,14 +389,19 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1600836080759" />
+    <state x="-1459" y="170" key="SettingsEditor" timestamp="1601241412143">
+      <screen x="-1920" y="3" width="1920" height="1050" />
+    </state>
+    <state x="-1459" y="170" key="SettingsEditor/0.0.1920.1050/-1920.3.1920.1050@-1920.3.1920.1050" timestamp="1601241412143" />
     <state x="67" y="131" key="caller.chooser.dialog" timestamp="1598611283228">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="67" y="131" key="caller.chooser.dialog/0.0.1366.768@0.0.1366.768" timestamp="1598611283228" />
-    <state x="432" y="145" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601233848780">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="-1313" y="201" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601243104305">
+      <screen x="-1920" y="3" width="1920" height="1050" />
     </state>
     <state x="432" y="145" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.768@0.0.1366.768" timestamp="1601233848780" />
+    <state x="-1313" y="201" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1050/-1920.3.1920.1050@-1920.3.1920.1050" timestamp="1601243104305" />
     <state x="250" y="112" width="866" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598614522512">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
