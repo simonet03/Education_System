@@ -3,6 +3,10 @@ package com.CovidHygiene.entity;
 public class Admin {
     private String adminNum, firstName, lastName, address;
 
+    public Admin(){
+
+    }
+
     private Admin(Builder builder){
         this.adminNum = builder.adminNum;
         this.firstName = builder.firstName;
