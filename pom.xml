@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3b4c4717413955f85968cd48fddc3ea5b217a744
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -93,4 +96,7 @@
       </plugins>
   </build>
 </project>
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3b4c4717413955f85968cd48fddc3ea5b217a744

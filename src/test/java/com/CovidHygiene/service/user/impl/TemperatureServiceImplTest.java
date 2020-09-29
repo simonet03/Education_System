@@ -54,7 +54,12 @@ public class TemperatureServiceImplTest {
         boolean deleted = temperatureService.delete(temperature.getEnteringTemp());
         Assert.assertTrue(deleted);
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
 
+>>>>>>> 3b4c4717413955f85968cd48fddc3ea5b217a744
 
 
     @Test
@@ -77,5 +82,9 @@ public class TemperatureServiceImplTest {
         }
 
     }
+<<<<<<< HEAD
+>>>>>>> dede9b0d7322d5ee360b3b4a80a0468acfdac658
+=======
 
+>>>>>>> 3b4c4717413955f85968cd48fddc3ea5b217a744
 }
