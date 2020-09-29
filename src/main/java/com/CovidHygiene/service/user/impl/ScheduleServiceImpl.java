@@ -4,9 +4,11 @@ import com.CovidHygiene.entity.Schedule;
 import com.CovidHygiene.repository.user.ScheduleRepository;
 import com.CovidHygiene.repository.user.impl.ScheduleRepositoryImpl;
 import com.CovidHygiene.service.user.ScheduleService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ScheduleServiceImpl implements ScheduleService {
 
     private static ScheduleService service = null;

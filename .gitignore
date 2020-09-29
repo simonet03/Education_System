@@ -1,4 +1,4 @@
-#IDE specific files to ignore(iml, ect);
+# Hide on github
 .idea/
 Education_System.iml
 target/

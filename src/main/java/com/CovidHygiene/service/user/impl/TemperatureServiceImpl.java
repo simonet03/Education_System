@@ -33,7 +33,12 @@ public class TemperatureServiceImpl implements TemperatureService {
     }
 
     @Override
-    public Temperature read(Double id) {
+    public Temperature read(Double aDouble) {
+        return this.temperatureRepository.read(String.valueOf(aDouble));
+    }
+
+    @Override
+    public Temperature read(String id) {
         return this.temperatureRepository.read(id);
     }
 

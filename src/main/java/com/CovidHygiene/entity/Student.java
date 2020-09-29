@@ -2,12 +2,15 @@ package com.CovidHygiene.entity;
 
 //Damien Mally - 216279585
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Student {
+public class Student implements Serializable {
 
     private String studentNum, firstName, lastName, address;
 
+    //constructor created for springboot
+private Student(){}
 
     private Student(Builder builder){
         this.studentNum = builder.studentNum;
