@@ -9,11 +9,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java.util.Iterator;
-
 import java.util.Set;
-import java.util.TreeSet;
-
 
 import static org.junit.Assert.*;
 
@@ -21,7 +17,7 @@ import static org.junit.Assert.*;
 public class TemperatureServiceImplTest {
 
     private static TemperatureService temperatureService = TemperatureServiceImpl.getTempService();
-    private static Temperature temperature = TemperatureFactory.buildTemperature(37.00);
+    private static Temperature temperature = TemperatureFactory.buildTemperature(37.2);
 
     @Test
     public void d_getAll() {
@@ -60,6 +56,7 @@ public class TemperatureServiceImplTest {
     }
 
 
+
     @Test
     public void d_getAboveAvg() {
         Set<Temperature> temps= temperatureService.getAboveAvg();
@@ -80,4 +77,5 @@ public class TemperatureServiceImplTest {
         }
 
     }
+
 }

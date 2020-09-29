@@ -27,11 +27,6 @@ public class TemperatureServiceImpl implements TemperatureService {
         return this.temperatureRepository.getAll();
     }
 
-    //business logic
-    @Override
-    public Set<Temperature> getAboveAvg() { return this.temperatureRepository.getAboveAvg();}
-
-
     @Override
     public Temperature create(Temperature temperature) {
         return this.temperatureRepository.create(temperature);
