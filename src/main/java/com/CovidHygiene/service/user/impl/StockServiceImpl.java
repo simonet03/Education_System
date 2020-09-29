@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class StockServiceImpl implements StockService{
     private static StockService stockService = null;
-    private StockRepository stockRepository;
+    private final StockRepository stockRepository;
 
     private StockServiceImpl(){
         this.stockRepository = StockRepositoryImpl.getStockRepo();
@@ -29,7 +29,6 @@ public class StockServiceImpl implements StockService{
         return this.stockRepository.create(stock);
     }
 
-    @Override
     public Stock read(String id){
         return this.stockRepository.read(id);
     }

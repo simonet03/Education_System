@@ -54,4 +54,29 @@ public class TemperatureServiceImplTest {
         boolean deleted = temperatureService.delete(temperature.getEnteringTemp());
         Assert.assertTrue(deleted);
     }
+<<<<<<< HEAD
+=======
+
+
+    @Test
+    public void d_getAboveAvg() {
+        Set<Temperature> temps= temperatureService.getAboveAvg();
+            //create hashset to treeSet
+        TreeSet<Temperature> treeTemp = new TreeSet<>(temps);
+            //create tailSet tree
+        TreeSet<Temperature> tail_set = new TreeSet<Temperature>();
+            //limit to
+        tail_set = (TreeSet<Temperature>)treeTemp.tailSet(temperature);
+            //create iterator
+        Iterator iterate;
+        iterate = tail_set.iterator();
+        //display
+        System.out.println("Temperatures to be concerned about are as follows: ");
+        //go through tailSet
+        while(iterate.hasNext()){
+            System.out.println(iterate.next()+ "");
+        }
+
+    }
+>>>>>>> dede9b0d7322d5ee360b3b4a80a0468acfdac658
 }

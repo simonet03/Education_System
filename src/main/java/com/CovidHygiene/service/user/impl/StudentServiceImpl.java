@@ -4,10 +4,12 @@ import com.CovidHygiene.entity.Student;
 import com.CovidHygiene.repository.user.StudentRepository;
 import com.CovidHygiene.repository.user.impl.StudentRepositoryImpl;
 import com.CovidHygiene.service.user.StudentService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 
     private static StudentService service = null;
@@ -24,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
         return service;
     }
 
-
+    // GET http method
     @Override
     public Set<Student> getAll() {
         return this.repository.getAll();
@@ -72,11 +74,13 @@ public class StudentServiceImpl implements StudentService {
         return studentNew;
     }
 
+    //POST http method ,because of creation
     @Override
     public Student create(Student student) {
         return this.repository.create(student);
     }
 
+    //
     @Override
     public Student read(String s) {
         return this.repository.read(s);

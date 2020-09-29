@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class CleanerServiceImpl implements CleanerService{
     private static CleanerService cleanerService = null;
-    private CleanerRepository cleanerRepository;
+    private final CleanerRepository cleanerRepository;
 
     private CleanerServiceImpl() {
         this.cleanerRepository = CleanerRepositoryImpl.getCleanerRepo();
@@ -31,7 +31,12 @@ public class CleanerServiceImpl implements CleanerService{
     }
 
     @Override
-    public Cleaner read(Long id){
+    public Cleaner read(Long aLong) {
+        return null;
+    }
+
+    public Cleaner read(String id){
+
         return this.cleanerRepository.read(id);
     }
 
@@ -41,7 +46,12 @@ public class CleanerServiceImpl implements CleanerService{
     }
 
     @Override
-    public boolean delete(Long id){
+    public boolean delete(Long aLong) {
+        return false;
+    }
+
+
+    public boolean delete(String id){
         return this.cleanerRepository.delete(id);
     }
 }
