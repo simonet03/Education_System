@@ -2,15 +2,22 @@ package com.CovidHygiene.entity;
 
 //Damien Mally - 216279585
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Student implements Serializable {
 
-    private String studentNum, firstName, lastName, address;
+    @Id
+    private String studentNum;
+    private String firstName, lastName, address;
+
+
 
     //constructor created for springboot
-private Student(){}
+    protected Student(){}
 
     private Student(Builder builder){
         this.studentNum = builder.studentNum;

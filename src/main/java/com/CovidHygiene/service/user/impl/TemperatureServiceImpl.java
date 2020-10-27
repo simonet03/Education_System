@@ -4,10 +4,12 @@ import com.CovidHygiene.entity.Temperature;
 import com.CovidHygiene.repository.user.TemperatureRepository;
 import com.CovidHygiene.repository.user.impl.TemperatureRepositoryImpl;
 import com.CovidHygiene.service.user.TemperatureService;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Set;
 
+@Service
 public class TemperatureServiceImpl implements TemperatureService {
 
     private static TemperatureService temperatureService = null;

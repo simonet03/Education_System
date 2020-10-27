@@ -4,9 +4,11 @@ import com.CovidHygiene.entity.Lecturer;
 import com.CovidHygiene.repository.user.LecturerRepository;
 import com.CovidHygiene.repository.user.impl.LecturerRepositoryImpl;
 import com.CovidHygiene.service.user.LecturerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class LecturerServiceImpl implements LecturerService {
     private static LecturerService service = null;
     private LecturerRepository repository;
