@@ -4,9 +4,11 @@ import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.repository.user.CleanerRepository;
 import com.CovidHygiene.repository.user.impl.CleanerRepositoryImpl;
 import com.CovidHygiene.service.user.CleanerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class CleanerServiceImpl implements CleanerService{
     private static CleanerService cleanerService = null;
     private final CleanerRepository cleanerRepository;
@@ -31,12 +33,7 @@ public class CleanerServiceImpl implements CleanerService{
     }
 
     @Override
-    public Cleaner read(Long aLong) {
-        return null;
-    }
-
-    public Cleaner read(String id){
-
+    public Cleaner read(Long id){
         return this.cleanerRepository.read(id);
     }
 
@@ -46,12 +43,7 @@ public class CleanerServiceImpl implements CleanerService{
     }
 
     @Override
-    public boolean delete(Long aLong) {
-        return false;
-    }
-
-
-    public boolean delete(String id){
+    public boolean delete(Long id) {
         return this.cleanerRepository.delete(id);
     }
-}
+    }

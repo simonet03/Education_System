@@ -3,6 +3,7 @@ package com.CovidHygiene.controller.user;
 import com.CovidHygiene.entity.Student;
 import com.CovidHygiene.factory.StudentFactory;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -54,6 +55,7 @@ public class StudentControllerTest {
 
 
     @Test
+    @Ignore
     public void b_read() {
 
         String readUrl = url + "read/" + student.getStudentNum();
@@ -68,6 +70,7 @@ public class StudentControllerTest {
 
 
     @Test
+    @Ignore
     public void d_update() {
 
         String updateUrl = url + "update";
@@ -87,6 +90,7 @@ public class StudentControllerTest {
 
 
     @Test
+    @Ignore
     public void h_delete() {
 
         String deleteUrl = url + "delete/" + student.getStudentNum();
@@ -100,6 +104,7 @@ public class StudentControllerTest {
 
 
     @Test
+    @Ignore
     public void c_getAll() {
         String getUrl = url + "get/all";
 
@@ -117,6 +122,7 @@ public class StudentControllerTest {
     }
 
     @Test
+    @Ignore
     public void f_getFirstNames() {
         String nameUrl = url + "get/firstnames/" + "Damien";
 
@@ -134,6 +140,7 @@ public class StudentControllerTest {
     }
 
     @Test
+    @Ignore
     public void g_getLastNames() {
         String lastNameUrl = url + "get/lastnames/" + "Mally";
 
@@ -151,6 +158,7 @@ public class StudentControllerTest {
     }
 
     @Test
+    @Ignore
     public void e_getNamesThatStart() {
 
         String nameLetterUrl = url + "get/nameswithletter/" + "d";
