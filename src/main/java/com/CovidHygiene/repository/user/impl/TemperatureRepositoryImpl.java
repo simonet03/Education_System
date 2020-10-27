@@ -31,13 +31,14 @@ public class TemperatureRepositoryImpl implements TemperatureRepository {
     }
 
     @Override
-    public Temperature read(String doubleTemp) {
-
+    public Temperature read(Double aDouble) {
         for(Temperature temperature : this.tempDB){
-            if(temperature.getEnteringTemp()==doubleTemp) return temperature;
+            if(temperature.getEnteringTemp()==aDouble) return temperature;
         }
         return null;
     }
+
+
 
     @Override
     public Temperature update(Temperature temperature) {

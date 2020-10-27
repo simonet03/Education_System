@@ -23,7 +23,7 @@ public class TemperatureController {
 
     @GetMapping("/read/temperature")
     public Temperature read (@PathVariable String temperature){
-        return  service.read(temperature);
+        return  service.read(Double.valueOf(temperature));
     }
 
     @PostMapping("/update")
@@ -47,9 +47,9 @@ public class TemperatureController {
         return service.getAll();
     }
 
-    @GetMapping("/getAboveAvg")
+   /** @GetMapping("/getAboveAvg")
     public Set<Temperature> getAboveAvg(){
         return service.getAboveAvg();
-    }
+    }**/
 
 }

@@ -10,6 +10,5 @@ public interface TemperatureService extends IService<Temperature, Double>, Tempe
     Set<Temperature> getAll();
 
 
-
-
+//    Set<Temperature> getAboveAvg();
 }
