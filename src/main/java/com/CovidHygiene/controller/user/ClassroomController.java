@@ -2,20 +2,17 @@
     Author:Ethan Petersen(217140807)
     This class contains the classroom controller
  */
-
 package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.factory.ClassroomFactory;
 import com.CovidHygiene.service.user.impl.ClassroomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
-@EnableAutoConfiguration
 @RequestMapping("/classroom")
 public class ClassroomController {
 
@@ -68,4 +65,3 @@ public class ClassroomController {
         return classroomService.delete(classNum);
     }
 }
-

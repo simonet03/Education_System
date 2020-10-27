@@ -57,22 +57,22 @@ public class ClassroomServiceImplTest {
     }
 
     @Test
-    public void e_allNotSanitizedClassrooms(){
+    public void f_allNotSanitizedClassrooms(){
         System.out.println("All Not Sanitized Classrooms: \n" + service.allNotSanitizedClassrooms());
     }
 
     @Test
-    public void f_allBookedClassrooms(){
+    public void g_allBookedClassrooms(){
         System.out.println("All Booked Classrooms: \n" + service.allBookedClassrooms());
     }
 
     @Test
-    public void g_allNotBookedClassrooms(){
+    public void h_allNotBookedClassrooms(){
         System.out.println("All Not Booked Classrooms: \n" + service.allNotBookedClassrooms());
     }
 
     @Test
-    public void h_delete() {
+    public void i_delete() {
         boolean deleted = service.delete(classroom.getClassroomNum());
         assertTrue(deleted);
     }
