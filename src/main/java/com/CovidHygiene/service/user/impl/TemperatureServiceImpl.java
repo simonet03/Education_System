@@ -4,10 +4,12 @@ import com.CovidHygiene.entity.Temperature;
 import com.CovidHygiene.repository.user.TemperatureRepository;
 import com.CovidHygiene.repository.user.impl.TemperatureRepositoryImpl;
 import com.CovidHygiene.service.user.TemperatureService;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Set;
 
+@Service
 public class TemperatureServiceImpl implements TemperatureService {
 
     private static TemperatureService temperatureService = null;
@@ -27,10 +29,6 @@ public class TemperatureServiceImpl implements TemperatureService {
         return this.temperatureRepository.getAll();
     }
 
-    //business logic
-    @Override
-    public Set<Temperature> getAboveAvg() { return this.temperatureRepository.getAboveAvg();}
-
 
     @Override
     public Temperature create(Temperature temperature) {
@@ -39,13 +37,10 @@ public class TemperatureServiceImpl implements TemperatureService {
 
     @Override
     public Temperature read(Double aDouble) {
-        return this.temperatureRepository.read(String.valueOf(aDouble));
+        return this.temperatureRepository.read(Double.valueOf(String.valueOf(aDouble)));
     }
 
-    @Override
-    public Temperature read(String id) {
-        return this.temperatureRepository.read(id);
-    }
+
 
     @Override
     public Temperature update(Temperature temperature) {

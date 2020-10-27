@@ -24,12 +24,6 @@ public class TemperatureRepositoryImpl implements TemperatureRepository {
         return tempDB;
     }
 
-    //business logic
-    @Override
-    public Set<Temperature> getAboveAvg() {
-        return tempDB;
-    }
-
     @Override
     public Temperature create(Temperature temperature) {
         this.tempDB.add(temperature);
@@ -37,13 +31,14 @@ public class TemperatureRepositoryImpl implements TemperatureRepository {
     }
 
     @Override
-    public Temperature read(String doubleTemp) {
-
+    public Temperature read(Double aDouble) {
         for(Temperature temperature : this.tempDB){
-            if(temperature.getEnteringTemp()==doubleTemp) return temperature;
+            if(temperature.getEnteringTemp()==aDouble) return temperature;
         }
         return null;
     }
+
+
 
     @Override
     public Temperature update(Temperature temperature) {

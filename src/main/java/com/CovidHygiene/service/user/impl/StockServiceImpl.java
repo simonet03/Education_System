@@ -4,8 +4,11 @@ import com.CovidHygiene.entity.Stock;
 import com.CovidHygiene.repository.user.StockRepository;
 import com.CovidHygiene.repository.user.impl.StockRepositoryImpl;
 import com.CovidHygiene.service.user.StockService;
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
+@Service
 public class StockServiceImpl implements StockService{
     private static StockService stockService = null;
     private final StockRepository stockRepository;

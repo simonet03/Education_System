@@ -26,7 +26,7 @@ public class CleanerController {
                 }
 
                 @GetMapping("/read/{id}")
-                public Cleaner read(@PathVariable String id) {
+                public Cleaner read(@PathVariable Long id) {
 
                     return cleanerService.read(id);
                 }
@@ -44,7 +44,7 @@ public class CleanerController {
                 }
 
                 @DeleteMapping("/delete/{id}")
-                public boolean delete(@PathVariable String id) {
+                public boolean delete(@PathVariable Long id) {
 
                     return cleanerService.delete(id);
                 }

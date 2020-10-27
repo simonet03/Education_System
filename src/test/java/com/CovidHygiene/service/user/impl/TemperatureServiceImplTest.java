@@ -10,10 +10,8 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.util.Iterator;
-
 import java.util.Set;
 import java.util.TreeSet;
-
 
 import static org.junit.Assert.*;
 
@@ -21,7 +19,7 @@ import static org.junit.Assert.*;
 public class TemperatureServiceImplTest {
 
     private static TemperatureService temperatureService = TemperatureServiceImpl.getTempService();
-    private static Temperature temperature = TemperatureFactory.buildTemperature(37.00);
+    private static Temperature temperature = TemperatureFactory.buildTemperature(37.2);
 
     @Test
     public void d_getAll() {
@@ -60,24 +58,25 @@ public class TemperatureServiceImplTest {
     }
 
 
+
     @Test
     public void d_getAboveAvg() {
-        Set<Temperature> temps= temperatureService.getAboveAvg();
-            //create hashset to treeSet
-        TreeSet<Temperature> treeTemp = new TreeSet<>(temps);
-            //create tailSet tree
-        TreeSet<Temperature> tail_set = new TreeSet<Temperature>();
-            //limit to
-        tail_set = (TreeSet<Temperature>)treeTemp.tailSet(temperature);
-            //create iterator
-        Iterator iterate;
-        iterate = tail_set.iterator();
-        //display
-        System.out.println("Temperatures to be concerned about are as follows: ");
-        //go through tailSet
-        while(iterate.hasNext()){
-            System.out.println(iterate.next()+ "");
-        }
+//        Set<Temperature> temps= temperatureService.getAboveAvg();
+//            //create hashset to treeSet
+//        TreeSet<Temperature> treeTemp = new TreeSet<>(temps);
+//            //create tailSet tree
+//        TreeSet<Temperature> tail_set = new TreeSet<Temperature>();
+//            //limit to
+//        tail_set = (TreeSet<Temperature>)treeTemp.tailSet(temperature);
+//            //create iterator
+//        Iterator iterate;
+//        iterate = tail_set.iterator();
+//        //display
+//        System.out.println("Temperatures to be concerned about are as follows: ");
+//        //go through tailSet
+//        while(iterate.hasNext()){
+//            System.out.println(iterate.next()+ "");
+//        }
 
     }
 }

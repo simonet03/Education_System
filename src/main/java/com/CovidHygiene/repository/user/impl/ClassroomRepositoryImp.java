@@ -33,7 +33,7 @@ public class ClassroomRepositoryImp implements ClassroomRepository {
     }
 
     @Override
-    public Classroom read(String classroomNum) {
+    public Classroom read(Integer classroomNum) {
         for( Classroom classroom: this.classroomDB){
             if(classroom.getClassroomNum() == (classroomNum)){
                 return classroom;
