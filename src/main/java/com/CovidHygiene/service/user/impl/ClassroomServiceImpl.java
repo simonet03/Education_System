@@ -7,60 +7,52 @@ package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.repository.user.ClassroomRepository;
-import com.CovidHygiene.repository.user.impl.ClassroomRepositoryImp;
 import com.CovidHygiene.service.user.ClassroomService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ClassroomServiceImpl implements ClassroomService {
-    private static ClassroomService service = null;
+    @Autowired
     private ClassroomRepository repository;
 
-    private ClassroomServiceImpl() {
-       this.repository = ClassroomRepositoryImp.getRepository(); //When a service class is instantiated it links it to the repository
-    }
-
-    public static ClassroomService getService(){
-        if(service == null) {
-            service  = new ClassroomServiceImpl();
-        }
-        return service ;
-    }
 
     @Override
     public Set<Classroom> getAll() {
-        return this.repository.getAll();
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
-
-    @Override
     public Classroom create(Classroom classroom) {
-        return this.repository.create(classroom);
+        return this.repository.save(classroom);
     }
 
-    @Override
+
     public Classroom read(Integer integer) {
-        return this.repository.read(integer);
+        return this.repository.findById(integer).orElseGet(null);
     }
 
-    @Override
+
     public Classroom update(Classroom classroom) {
-        return this.repository.update(classroom);
+        return this.repository.save(classroom);
     }
 
-    @Override
+
     public boolean delete(Integer integer) {
-        return this.repository.delete(integer);
+
+        this.repository.deleteById(integer);
+        if(repository.existsById(integer)){return false;}
+        return true;
     }
 
     @Override
     //Business Logic: Showing all classes that are sanitized
     public Set<Classroom> allSanitizedClassrooms(){
         Set<Classroom> sanitized = new HashSet();
-        Set<Classroom> classroomDb = repository.getAll();
+        Set<Classroom> classroomDb = getAll();
 
         for(Classroom  classroom: classroomDb){
             if(classroom.getSanitizingStation().equals(true)){
@@ -72,7 +64,7 @@ public class ClassroomServiceImpl implements ClassroomService {
 
     public Set<Classroom> allNotSanitizedClassrooms(){
         Set<Classroom> notSanitized = new HashSet();
-        Set<Classroom> classroomDb = repository.getAll();
+        Set<Classroom> classroomDb = getAll();
 
         for(Classroom  classroom: classroomDb){
             if(classroom.getSanitizingStation().equals(false)){
@@ -85,7 +77,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     @Override
     public Set<Classroom> allBookedClassrooms(){
         Set<Classroom> bookedClassrooms = new HashSet();
-        Set<Classroom> classroomDb = repository.getAll();
+        Set<Classroom> classroomDb = getAll();
 
         for(Classroom  classroom: classroomDb){
             if(classroom.getBooked().equals(true)){
@@ -98,7 +90,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     @Override
     public Set<Classroom> allNotBookedClassrooms(){
         Set<Classroom> notBookedClassrooms = new HashSet();
-        Set<Classroom> classroomDb = repository.getAll();
+        Set<Classroom> classroomDb = getAll();
 
         for(Classroom  classroom: classroomDb){
             if(classroom.getBooked().equals(false)){
