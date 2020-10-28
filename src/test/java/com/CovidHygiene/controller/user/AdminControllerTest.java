@@ -25,7 +25,7 @@ public class AdminControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private static String url = "http://localhost:8080/admin";
+    private static String url = "http://localhost:8090/admin";
 
    private static Admin admin = new Admin.Builder().setAdminNum("A001").setFirstName("Daphney").setLastName("Kgosiejang").setAddress("Cape Town").build();
    private static Admin admin2 = new Admin.Builder().setAdminNum("B006").setFirstName("Thabisa").setLastName("Setlhare").setAddress("Bellville").build();
