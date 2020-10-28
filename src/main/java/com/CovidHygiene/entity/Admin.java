@@ -1,9 +1,17 @@
 package com.CovidHygiene.entity;
 
-public class Admin {
-    private String adminNum, firstName, lastName, address;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Objects;
 
-    public Admin(){
+@Entity
+public class Admin {
+
+    @Id
+    private String adminNum;
+    private String firstName,lastName,address;
+
+    protected Admin(){
 
     }
 
@@ -31,6 +39,19 @@ public class Admin {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Admin admin = (Admin) o;
+        return adminNum.equals(admin.adminNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(adminNum);
+    }
+
+    @Override
     public String toString() {
         return "Admin{" +
                 "adminNum='" + adminNum + '\'' +
@@ -38,6 +59,8 @@ public class Admin {
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+
+
     }
 
     public static class Builder {
