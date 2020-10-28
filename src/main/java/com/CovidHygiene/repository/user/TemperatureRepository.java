@@ -1,11 +1,11 @@
 package com.CovidHygiene.repository.user;
 
 import com.CovidHygiene.entity.Temperature;
-import com.CovidHygiene.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Set;
+@Repository
+public interface TemperatureRepository extends JpaRepository<Temperature, Double> {
 
-public interface TemperatureRepository extends IRepository<Temperature, Double> {
-
-    Set<Temperature> getAll();
+   // Set<Temperature> getAll();
 }

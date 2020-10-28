@@ -1,4 +1,4 @@
-package com.CovidHygiene.repository.user.impl;
+/**package com.CovidHygiene.repository.user.impl;
 
 import com.CovidHygiene.entity.Temperature;
 import com.CovidHygiene.repository.user.TemperatureRepository;
@@ -59,4 +59,4 @@ public class TemperatureRepositoryImpl implements TemperatureRepository {
         }
         return false;
     }
-}
+}**/

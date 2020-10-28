@@ -6,11 +6,14 @@ import com.CovidHygiene.service.user.LecturerService;
 import com.CovidHygiene.service.user.impl.LecturerServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
 public class LecturerServiceImplTest {
-    private static LecturerService service = LecturerServiceImpl.getService();
+
+    @Autowired
+    private static LecturerService service;
 
     private static Lecturer lecturer = LecturerFactory.buildLecturer("1234567", "Leon", "Small", "02, Adderley St");
 
