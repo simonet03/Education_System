@@ -1,10 +1,24 @@
 package com.CovidHygiene.entity;
 
-public class Cleaner {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@IdClass(Cleaner.class)
+public class Cleaner implements Serializable {
+
+    @Id
     private long cleanerNum;
     private String firstName;
     private String lastName;
     private String address;
+
+    protected Cleaner(){
+
+    }
 
     public Cleaner(Cleaner.Builder builder){
         this.cleanerNum = builder.cleanerNum;

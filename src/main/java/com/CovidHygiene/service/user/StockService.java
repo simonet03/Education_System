@@ -6,6 +6,6 @@ import com.CovidHygiene.service.IService;
 
 import java.util.Set;
 
-public interface StockService extends IService<Stock, String>, StockRepository{
+public interface StockService extends IService<Stock, String>{
     Set<Stock> getAll();
 }
