@@ -5,11 +5,19 @@
 
 package com.CovidHygiene.entity;
 
-public class Classroom {
-    private Boolean booked, sanitizingStation;
-    private int classroomNum, numOfSeats;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-    private Classroom(){
+@Entity
+public class Classroom {
+    @Id
+    private int classroomNum;
+    private Boolean booked;
+    private int numOfSeats;
+    private Boolean sanitizingStation;
+
+
+    protected Classroom(){
 
     }
 
