@@ -3,17 +3,18 @@ package com.CovidHygiene.service.user.impl;
 import com.CovidHygiene.entity.Contact;
 import com.CovidHygiene.factory.ContactFactory;
 import com.CovidHygiene.service.user.ContactService;
-import com.CovidHygiene.service.user.impl.ContactServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class ContactServiceImplTest {
 
-    private static ContactService service = ContactServiceImpl.getService();
+    @Autowired
+    private ContactService service ;
     private static Contact contact = ContactFactory.createContact(27735843267L, 0, "email@gmail.com");
 
 

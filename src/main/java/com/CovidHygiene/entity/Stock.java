@@ -1,8 +1,19 @@
 package com.CovidHygiene.entity;
 
-public class Stock {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import java.io.Serializable;
+
+@Entity
+@IdClass(Stock.class)
+public class Stock implements Serializable {
+
+    @Id
     private long numOfStock;
     private String stockType;
+
+    protected Stock(){}
 
     private Stock(Stock.Builder builder){
         this.numOfStock = builder.numOfStock;

@@ -2,56 +2,50 @@ package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.repository.user.CleanerRepository;
-import com.CovidHygiene.repository.user.impl.CleanerRepositoryImpl;
 import com.CovidHygiene.service.user.CleanerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
+@Service
 public class CleanerServiceImpl implements CleanerService{
-    private static CleanerService cleanerService = null;
-    private final CleanerRepository cleanerRepository;
 
-    private CleanerServiceImpl() {
-        this.cleanerRepository = CleanerRepositoryImpl.getCleanerRepo();
-    }
+    @Autowired
+    private CleanerRepository cleanerRepository;
 
-    public static CleanerService getCleanerService(){
-        if(cleanerService == null) cleanerService = new CleanerServiceImpl();
-        return cleanerService;
-    }
 
     @Override
     public Set<Cleaner> getAll(){
-        return this.cleanerRepository.getAll();
+        return this.cleanerRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public Cleaner create(Cleaner cleaner){
-        return this.cleanerRepository.create(cleaner);
+        return this.cleanerRepository.save(cleaner);
     }
 
     @Override
-    public Cleaner read(Long aLong) {
-        return null;
-    }
-
-    public Cleaner read(String id){
-
-        return this.cleanerRepository.read(id);
+    public Cleaner read(Long id){
+        return this.cleanerRepository.findById(id).orElseGet(null);
     }
 
     @Override
     public Cleaner update(Cleaner cleaner){
-        return this.cleanerRepository.update(cleaner);
+        if (this.cleanerRepository.existsById(cleaner.getCleanerNum())){
+            return this.cleanerRepository.save(cleaner);
+        }
+        return null;
     }
 
     @Override
-    public boolean delete(Long aLong) {
-        return false;
+    public boolean delete(Long id) {
+        this.cleanerRepository.deleteById(id);
+            if(this.cleanerRepository.existsById(id)){
+                return false;
+            }
+            return true;
+        }
     }
 
-
-    public boolean delete(String id){
-        return this.cleanerRepository.delete(id);
-    }
-}

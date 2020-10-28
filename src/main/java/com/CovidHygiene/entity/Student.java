@@ -2,15 +2,22 @@ package com.CovidHygiene.entity;
 
 //Damien Mally - 216279585
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Student implements Serializable {
 
-    private String studentNum, firstName, lastName, address;
+    @Id
+    private String studentNum;
+    private String firstName, lastName, address;
+
+
 
     //constructor created for springboot
-private Student(){}
+    protected Student(){}
 
     private Student(Builder builder){
         this.studentNum = builder.studentNum;
@@ -49,26 +56,18 @@ private Student(){}
                 '}';
     }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(studentNum, student.studentNum) &&
-                Objects.equals(firstName, student.firstName) &&
-                Objects.equals(lastName, student.lastName) &&
-                Objects.equals(address, student.address);
+        return studentNum.equals(student.studentNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(studentNum, firstName, lastName, address);
+        return Objects.hash(studentNum);
     }
-
-
-
 
 
     //=================================================

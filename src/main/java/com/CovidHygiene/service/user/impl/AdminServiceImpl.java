@@ -4,9 +4,11 @@ import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.repository.user.AdminRepository;
 import com.CovidHygiene.repository.user.impl.AdminRepositoryImp;
 import com.CovidHygiene.service.user.AdminService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class AdminServiceImpl implements AdminService {
 
     private static AdminService service = null;

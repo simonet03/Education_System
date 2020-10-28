@@ -25,11 +25,11 @@ public class TemperatureControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private static String baseURL ="Http://localhost:8080/temperature";
+    private static final String baseURL ="Http://localhost:8090/temperature";
 
-    private static Temperature temp = TemperatureFactory.buildTemperature(36.00);
-    private static Temperature temp1 = TemperatureFactory.buildTemperature(37.00);
-    private static Temperature temp2 = TemperatureFactory.buildTemperature(38.00);
+    private static final Temperature temp = TemperatureFactory.buildTemperature(36.00);
+    private static final Temperature temp1 = TemperatureFactory.buildTemperature(37.00);
+    private static final Temperature temp2 = TemperatureFactory.buildTemperature(38.00);
 
     @Test
     public void a_create() {
@@ -59,6 +59,9 @@ public class TemperatureControllerTest {
         Temperature updateNew = new Temperature.Builder().copy(temp).setEnteringTemp(37.00).build();
         ResponseEntity<Temperature> response = restTemplate.postForEntity(url,updateNew,Temperature.class);
 
+        assertNotNull(response);
+        assertNotNull(response.getBody());
+
         System.out.println("Update: \n" + response.getBody());
     }
 
@@ -74,19 +77,21 @@ public class TemperatureControllerTest {
         System.out.println("Get All Temperatures: \n" + response.getBody());
     }
 
-    @Test
+   /** @Test
     public void e_getAboveAvg() {
         String url = baseURL + "/getAboveAvg";
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
         System.out.println("Get All Temperatures Above Average: \n" + response.getBody());
-    }
+    }**/
 
     @Test
-    public void f_delete() {
+    public void e_delete() {
         String url = baseURL + "/delete/temperature";
         restTemplate.delete(url);
 
-        System.out.println("URL: " +url);
+        System.out.println("deleted: " +url);
+
+        d_getAll();
     }
 }

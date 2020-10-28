@@ -1,14 +1,16 @@
 package com.CovidHygiene.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Objects;
 
+@Entity
 public class Temperature implements Serializable {
-
-
-
+    @Id
     private double enteringTemp;
 
-    private Temperature(){}
+    protected Temperature(){}
 
     private Temperature(Builder builder) {
         this.enteringTemp = builder.enteringTemp;
@@ -24,6 +26,19 @@ public class Temperature implements Serializable {
         return "Temperature{" +
                 "enteringTemp=" + enteringTemp +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o ) return  true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Temperature temperature = (Temperature) o;
+        return temperature.equals(temperature.enteringTemp);
+    }
+
+    @Override
+    public int hashCode(){
+       return Objects.hash(enteringTemp);
     }
 
     public static class Builder {

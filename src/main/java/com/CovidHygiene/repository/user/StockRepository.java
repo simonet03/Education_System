@@ -2,9 +2,12 @@ package com.CovidHygiene.repository.user;
 
 import com.CovidHygiene.entity.Stock;
 import com.CovidHygiene.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
-public interface StockRepository extends IRepository<Stock, String>{
-    Set <Stock> getAll();
+@Repository
+public interface StockRepository extends JpaRepository<Stock, String>{
+
 }

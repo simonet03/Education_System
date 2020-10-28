@@ -3,15 +3,21 @@ package com.CovidHygiene.entity;
 //Damien Mally - 216279585
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Contact implements Serializable {
-    private long cellPhone, homePhone;
+
+    @Id
+    private long cellPhone;
+    private long homePhone;
     private String email;
 
 
-    private Contact(){}
+    protected Contact(){}
 
     private Contact(Builder builder){
         this.cellPhone = builder.cellPhone;
@@ -40,7 +46,6 @@ public class Contact implements Serializable {
                 '}';
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,6 +60,7 @@ public class Contact implements Serializable {
     public int hashCode() {
         return Objects.hash(cellPhone, homePhone, email);
     }
+
 
     //===========Builder class==============
     //===========Same variables=============
@@ -94,3 +100,4 @@ public class Contact implements Serializable {
         }
     }
  }
+

@@ -1,8 +1,7 @@
 /*
     Author:Ethan Petersen(217140807)
-    This class contains test case for the classroom controller
+    This class contains classroom controller test case
  */
-
 package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Classroom;

@@ -2,34 +2,27 @@ package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Student;
 import com.CovidHygiene.repository.user.StudentRepository;
-import com.CovidHygiene.repository.user.impl.StudentRepositoryImpl;
 import com.CovidHygiene.service.user.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    private static StudentService service = null;
+
+    @Autowired
     private StudentRepository repository;
 
-    private StudentServiceImpl(){
-        this.repository = StudentRepositoryImpl.getStudentRepository();
-    }
 
-    public static StudentService getService(){
-        if(service == null) {
-            service = new StudentServiceImpl();
-        }
-        return service;
-    }
 
-    // GET http method
+
     @Override
     public Set<Student> getAll() {
-        return this.repository.getAll();
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
@@ -77,22 +70,31 @@ public class StudentServiceImpl implements StudentService {
     //POST http method ,because of creation
     @Override
     public Student create(Student student) {
-        return this.repository.create(student);
+        return this.repository.save(student);
     }
 
     //
     @Override
     public Student read(String s) {
-        return this.repository.read(s);
+        return this.repository.findById(s).orElseGet(null);
     }
 
     @Override
     public Student update(Student student) {
-        return this.repository.update(student);
+        //must check with IF Statement first
+        if (this.repository.existsById(student.getStudentNum())) {
+            return this.repository.save(student);
+        }
+        return null;
     }
 
     @Override
     public boolean delete(String s) {
-        return this.repository.delete(s);
+        this.repository.deleteById(s);
+
+        if (this.repository.existsById(s)){
+            return false;
+        }
+        return true;
     }
 }

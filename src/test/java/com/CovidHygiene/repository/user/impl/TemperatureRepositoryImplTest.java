@@ -1,4 +1,4 @@
-package com.CovidHygiene.repository.user.impl;
+/**package com.CovidHygiene.repository.user.impl;
 
 import com.CovidHygiene.entity.Temperature;
 import com.CovidHygiene.factory.TemperatureFactory;
@@ -50,4 +50,4 @@ public class TemperatureRepositoryImplTest {
         boolean deleted = tempRepo.delete(temperature.getEnteringTemp());
         Assert.assertTrue(deleted);
     }
-}
+}**/

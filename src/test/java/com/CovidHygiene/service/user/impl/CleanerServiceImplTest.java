@@ -8,13 +8,19 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class CleanerServiceImplTest {
-    private static CleanerService cleanerService = CleanerServiceImpl.getCleanerService();
+
+    @Autowired
+    private static CleanerService cleanerService;
+
     private static Cleaner cleaner = CleanerFactory.buildCleaner(10, "Nazeerah",
             "Carr", "2 Newfields Road");
 

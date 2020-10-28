@@ -1,9 +1,20 @@
 package com.CovidHygiene.entity;
 
-public class Lecturer {
-    //private long lecturerNum;
-    private String lecturerNum, firstName, lastName, address;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Objects;
 
+@Entity
+
+public class Lecturer {
+
+    @Id
+    private String lecturerNum;
+    private String firstName;
+    private String lastName;
+    private String address;
+
+    protected  Lecturer(){}
 
     private Lecturer(Builder builder){
         this.lecturerNum = builder.lecturerNum;
@@ -71,5 +82,21 @@ public class Lecturer {
         public Lecturer build(){
             return new Lecturer(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lecturer lecturer = (Lecturer) o;
+        return lecturerNum.equals(lecturer.lecturerNum) &&
+                firstName.equals(lecturer.firstName) &&
+                lastName.equals(lecturer.lastName) &&
+                address.equals(lecturer.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lecturerNum, firstName, lastName, address);
     }
 }

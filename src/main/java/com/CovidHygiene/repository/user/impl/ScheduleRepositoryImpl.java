@@ -27,7 +27,7 @@ public class ScheduleRepositoryImpl implements ScheduleRepository{
     }
 
     @Override
-    public Schedule read(String classNum){
+    public Schedule read(Integer classNum){
         return schedules.stream().filter(schedule -> schedule.getClassroomNum() == classNum).
                 findAny().orElse(null);
     }
