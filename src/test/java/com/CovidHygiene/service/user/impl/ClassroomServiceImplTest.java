@@ -15,8 +15,10 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class ClassroomServiceImplTest {
+
     @Autowired
-    private static ClassroomService service;
+    private ClassroomService service;
+
     private static Classroom classroom = ClassroomFactory.createClassroom(7,true,20,true);
     private static Classroom classroom1 = ClassroomFactory.createClassroom(8,true,20,true);
     private static Classroom classroom2 = ClassroomFactory.createClassroom(9,false,20,true);
