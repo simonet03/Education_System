@@ -3,6 +3,7 @@ package com.CovidHygiene.controller.user;
 import com.CovidHygiene.entity.Contact;
 import com.CovidHygiene.factory.ContactFactory;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -28,7 +29,8 @@ public class ContactControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private  String url = "http://localhost:8080/contact/";
+    //made the port 8090 because something else is using 8080
+    private  String url = "http://localhost:8090/contact/";
 
 
     private static Contact contact = ContactFactory.createContact(27735843267L, 0, "email@gmail.com");
@@ -49,6 +51,7 @@ public class ContactControllerTest {
 
 
     @Test
+    //@Ignore
     public void b_read() {
         String readUrl = url + "read/" + contact.getCellPhone();
 
@@ -61,6 +64,7 @@ public class ContactControllerTest {
 
 
     @Test
+    //@Ignore
     public void d_update() {
         String updateUrl = url + "update";
 
@@ -77,6 +81,7 @@ public class ContactControllerTest {
 
 
     @Test
+    //@Ignore
     public void e_delete() {
         String deleteUrl = url + "delete/" + contact.getCellPhone();
 
@@ -89,6 +94,7 @@ public class ContactControllerTest {
 
 
     @Test
+    //@Ignore
     public void c_getAll() {
         String getUrl = url + "get/all";
 

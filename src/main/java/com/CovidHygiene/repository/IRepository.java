@@ -1,5 +1,6 @@
 package com.CovidHygiene.repository;
 
+@Deprecated
 public interface IRepository<T, ID> {
     T create(T t);
     T read(ID id);

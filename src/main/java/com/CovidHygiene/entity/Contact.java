@@ -46,7 +46,6 @@ public class Contact implements Serializable {
                 '}';
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,6 +60,7 @@ public class Contact implements Serializable {
     public int hashCode() {
         return Objects.hash(cellPhone, homePhone, email);
     }
+
 
     //===========Builder class==============
     //===========Same variables=============
@@ -100,3 +100,4 @@ public class Contact implements Serializable {
         }
     }
  }
+
