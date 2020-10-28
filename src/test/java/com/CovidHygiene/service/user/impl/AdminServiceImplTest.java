@@ -8,13 +8,15 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AdminServiceImplTest {
 
-    private static AdminService service = AdminServiceImpl.getService();
+    @Autowired
+    private AdminService service;
     private static Admin admin = AdminFactory.buildAdmin("A001","Daphney","Kgosiejang",
             "Cput, Cape Town, 7925");
 
