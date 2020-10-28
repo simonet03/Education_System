@@ -2,49 +2,47 @@ package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.repository.user.AdminRepository;
-import com.CovidHygiene.repository.user.impl.AdminRepositoryImp;
 import com.CovidHygiene.service.user.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class AdminServiceImpl implements AdminService {
 
     private static AdminService service = null;
+    @Autowired
     private AdminRepository repository;
 
-    private AdminServiceImpl() {
-        this.repository = AdminRepositoryImp.getRepository();
-    }
-
-    public static AdminService getService() {
-        if (service == null) service = new AdminServiceImpl();
-        return service;
-    }
     @Override
     public Set<Admin> getAll() {
-                return this.repository.getAll();
+                return this.repository.findAll().stream().collect(Collectors.toSet());
             }
 
     @Override
     public Admin create(Admin admin) {
-                return this.repository.create(admin);
+                return this.repository.save(admin);
             }
 
     @Override
      public Admin read(String a) {
-                return this.repository.read(a);
+                return this.repository.findById(a).orElseGet(null);
             }
 
      @Override
      public Admin update(Admin admin) {
-                return this.repository.update(admin);
-            }
-
+         if (this.repository.existsById(admin.getAdminNum())) {
+             return this.repository.save(admin);
+         }
+         return null;
+     }
      @Override
      public boolean delete(String a) {
-                return this.repository.delete(a);
+        this.repository.deleteById(a);
+        if(this.repository.existsById(a)) return false;
+        else return true;
             }
         }
 

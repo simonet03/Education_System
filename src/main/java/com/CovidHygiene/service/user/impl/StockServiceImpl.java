@@ -2,47 +2,47 @@ package com.CovidHygiene.service.user.impl;
 
 import com.CovidHygiene.entity.Stock;
 import com.CovidHygiene.repository.user.StockRepository;
-import com.CovidHygiene.repository.user.impl.StockRepositoryImpl;
 import com.CovidHygiene.service.user.StockService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class StockServiceImpl implements StockService{
-    private static StockService stockService = null;
-    private final StockRepository stockRepository;
 
-    private StockServiceImpl(){
-        this.stockRepository = StockRepositoryImpl.getStockRepo();
-    }
-
-    public static StockService getStockService(){
-        if(stockService == null) stockService = new StockServiceImpl();
-        return stockService;
-    }
+    @Autowired
+    private StockRepository stockRepository;
 
     @Override
     public Set<Stock> getAll(){
-        return this.stockRepository.getAll();
+        return this.stockRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public Stock create(Stock stock){
-        return this.stockRepository.create(stock);
+        return this.stockRepository.save(stock);
     }
 
     public Stock read(String id){
-        return this.stockRepository.read(id);
+        return this.stockRepository.findById(id).orElseGet(null);
     }
 
     @Override
     public Stock update(Stock stock){
-        return this.stockRepository.update(stock);
+        if (this.stockRepository.existsById(stock.getStockType())){
+            return this.stockRepository.save(stock);
+        }
+        return null;
     }
 
     @Override
     public boolean delete(String id){
-        return this.stockRepository.delete(id);
+        this.stockRepository.deleteById(id);
+        if(this.stockRepository.existsById(id)){
+            return false;
+        }
+        return true;
     }
 }
