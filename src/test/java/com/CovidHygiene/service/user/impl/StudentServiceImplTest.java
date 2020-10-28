@@ -3,11 +3,11 @@ package com.CovidHygiene.service.user.impl;
 import com.CovidHygiene.entity.Student;
 import com.CovidHygiene.factory.StudentFactory;
 import com.CovidHygiene.service.user.StudentService;
-import com.CovidHygiene.service.user.impl.StudentServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -16,7 +16,8 @@ import java.util.Set;
 
 public class StudentServiceImplTest {
 
-    private static StudentService service = StudentServiceImpl.getService();
+    @Autowired
+    private static StudentService service;
 
     private static Student student = StudentFactory.createStudent("Damian", "Mallie", "420420, Cape Town, South Africa, Earth");
     private static Student student1 = StudentFactory.createStudent("Jason", "Small", "651351, Cape Town, South Africa, Earth");
