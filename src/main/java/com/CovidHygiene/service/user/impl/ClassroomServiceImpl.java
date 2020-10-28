@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class ClassroomServiceImpl implements ClassroomService {
+
     @Autowired
     private ClassroomRepository repository;
 
@@ -26,21 +27,22 @@ public class ClassroomServiceImpl implements ClassroomService {
         return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
+    @Override
     public Classroom create(Classroom classroom) {
         return this.repository.save(classroom);
     }
 
-
+    @Override
     public Classroom read(Integer integer) {
         return this.repository.findById(integer).orElseGet(null);
     }
 
-
+    @Override
     public Classroom update(Classroom classroom) {
         return this.repository.save(classroom);
     }
 
-
+    @Override
     public boolean delete(Integer integer) {
 
         this.repository.deleteById(integer);
@@ -62,6 +64,7 @@ public class ClassroomServiceImpl implements ClassroomService {
         return sanitized;
     }
 
+    @Override
     public Set<Classroom> allNotSanitizedClassrooms(){
         Set<Classroom> notSanitized = new HashSet();
         Set<Classroom> classroomDb = getAll();
