@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 public class CleanerControllerTest {
         @Autowired
         private TestRestTemplate restTemplate;
-        private static String baseURL = "Http://localhost:8080/classroom";
+        private static String baseURL = "http://localhost:8090/classroom";
 
         private static Cleaner cleaner = CleanerFactory.buildCleaner(20,"Nazeerah","Carr","2 Newfields Road");
         private static Cleaner cleaner1 = CleanerFactory.buildCleaner(21,"Alice","Cooper","105 Headway Street");
