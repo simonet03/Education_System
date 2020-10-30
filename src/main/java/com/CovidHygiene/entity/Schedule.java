@@ -1,9 +1,13 @@
 package com.CovidHygiene.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Entity
 public class Schedule {
+    @Id
     private int classroomNum;
     private LocalDate dayPicked;
     private LocalTime statTime;
@@ -11,9 +15,9 @@ public class Schedule {
     private boolean bookedForTeach;
     private boolean bookedForSanti;
 
-    public Schedule(){}
+    protected Schedule(){}
 
-    public Schedule(ScheduleBuilder scheduleBuilder){
+    protected Schedule(ScheduleBuilder scheduleBuilder){
         this.classroomNum = scheduleBuilder.classroomNum;
         this.dayPicked = scheduleBuilder.dayPicked;
         this.statTime = scheduleBuilder.statTime;
