@@ -7,6 +7,7 @@ import com.CovidHygiene.service.user.impl.ScheduleServiceImpl;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -15,7 +16,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ScheduleServiceImplTest {
 
-    private static ScheduleService service = ScheduleServiceImpl.getService();
+    @Autowired
+    private static ScheduleService service;
     private static Schedule schedule = ScheduleFactory.buildSchedule(30, LocalTime.of(10,30),LocalTime.of(16,30),true,false);
 
     @Test
