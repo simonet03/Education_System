@@ -27,6 +27,11 @@ public class LecturerController {
         return service.read(ID);
     }
 
+    @PostMapping("/update")
+    public Lecturer update(@RequestBody Lecturer lecturer){
+        return service.update(lecturer);
+    }
+
     @PostMapping("/delete/{ID}")
     public String delete(@PathVariable String ID){
         boolean result = service.delete(ID);
