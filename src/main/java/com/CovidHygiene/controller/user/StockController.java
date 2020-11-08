@@ -4,12 +4,10 @@ import com.CovidHygiene.entity.Stock;
 import com.CovidHygiene.service.user.impl.StockServiceImpl;
 import com.CovidHygiene.factory.StockFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@EnableAutoConfiguration
 @RequestMapping("/Stock")
 
 public class StockController {
@@ -35,16 +33,17 @@ public class StockController {
             return stockService.update(stock);
         }
 
-        @GetMapping("/getAll")
-        public Set<Stock> getAll() {
-
-            return stockService.getAll();
-        }
 
         @DeleteMapping("/delete/{id}")
         public boolean delete(@PathVariable String id) {
 
             return stockService.delete(id);
         }
+
+    @GetMapping("/getAll")
+    public Set<Stock> getAll() {
+
+        return stockService.getAll();
+    }
 
 }
