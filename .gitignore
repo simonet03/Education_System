@@ -2,4 +2,4 @@
 .idea/
 Education_System.iml
 target/
-resources/
+src/main/resources/
