@@ -3,3 +3,4 @@
 Education_System.iml
 target/
 src/main/resources/
+application.properties
