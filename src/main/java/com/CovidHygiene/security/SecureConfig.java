@@ -21,13 +21,16 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("thing")
-                .password(encoder().encode("that"))
-                .roles(Admin_Role, /**admin has user rights**/ User_Role)
+                //ADMIN
+                .withUser("admin")
+                .password(encoder().encode("123"))
+                .roles(Admin_Role, User_Role)
+
                 //add more than one user
         .and()
-                .withUser("Timothy")
-                .password(encoder().encode("12345"))
+
+                .withUser("user")
+                .password(encoder().encode("456"))
                 .roles(User_Role);
     }
 
@@ -38,11 +41,12 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/educationsystem/**/create","/educationsystem/**/delete","/educationsystem/**/update").hasRole(Admin_Role)
-                .antMatchers(HttpMethod.GET, "/educationsystem/**/read/**", "/educationsystem/**/getAll/**").hasRole(User_Role)
+                .antMatchers(HttpMethod.POST, "/educationsystem/**/create", "/educationsystem/**/update").hasRole(Admin_Role)
+                .antMatchers(HttpMethod.DELETE,  "/educationsystem/**/delete/**").hasRole(Admin_Role)
+                .antMatchers(HttpMethod.GET, "/educationsystem/**/read/**", "/educationsystem/**/getAll/**", "/educationsystem/**/get/**").hasRole(User_Role)
                 .and()
-                .csrf().disable() /**disable cross referencing**/
-                .formLogin().disable();/** since endpoint = no form**/
+                .csrf().disable(); /**disable cross referencing**/
+
 
     }
 
