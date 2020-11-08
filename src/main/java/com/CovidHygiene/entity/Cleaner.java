@@ -7,7 +7,6 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@IdClass(Cleaner.class)
 public class Cleaner implements Serializable {
 
     @Id
@@ -54,11 +53,11 @@ public class Cleaner implements Serializable {
     }
 
     public static class Builder{
-        public long cleanerNum;
+        private long cleanerNum;
         private String firstName, lastName, address;
 
-        public Cleaner.Builder setCleanerNum(long CleanerNum){
-            this.cleanerNum = cleanerNum;
+        public Cleaner.Builder setCleanerNum(long number){
+            this.cleanerNum = number;
             return this;
         }
 

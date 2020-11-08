@@ -46,6 +46,9 @@ public class StudentControllerTest {
         assertNotNull(response);
         assertNotNull(response.getBody());
 
+        assertNotNull(response2);
+        assertNotNull(response2.getBody());
+
         student = response.getBody();
         student2 = response2.getBody();
 

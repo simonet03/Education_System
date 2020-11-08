@@ -13,36 +13,36 @@ import java.util.stream.Collectors;
 public class CleanerServiceImpl implements CleanerService{
 
     @Autowired
-    private CleanerRepository cleanerRepository;
+    private CleanerRepository repository;
 
 
     @Override
     public Set<Cleaner> getAll(){
-        return this.cleanerRepository.findAll().stream().collect(Collectors.toSet());
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public Cleaner create(Cleaner cleaner){
-        return this.cleanerRepository.save(cleaner);
+        return this.repository.save(cleaner);
     }
 
     @Override
     public Cleaner read(Long id){
-        return this.cleanerRepository.findById(id).orElseGet(null);
+        return this.repository.findById(id).orElseGet(null);
     }
 
     @Override
     public Cleaner update(Cleaner cleaner){
-        if (this.cleanerRepository.existsById(cleaner.getCleanerNum())){
-            return this.cleanerRepository.save(cleaner);
+        if (this.repository.existsById(cleaner.getCleanerNum())){
+            return this.repository.save(cleaner);
         }
         return null;
     }
 
     @Override
     public boolean delete(Long id) {
-        this.cleanerRepository.deleteById(id);
-            if(this.cleanerRepository.existsById(id)){
+        this.repository.deleteById(id);
+            if(this.repository.existsById(id)){
                 return false;
             }
             return true;

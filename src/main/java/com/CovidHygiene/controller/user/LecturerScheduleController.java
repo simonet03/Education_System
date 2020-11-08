@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/lecturer_schedule")
+@RequestMapping("/lecturerSchedule")
 public class LecturerScheduleController {
 
     @Autowired

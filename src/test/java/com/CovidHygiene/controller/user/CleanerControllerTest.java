@@ -24,10 +24,13 @@ import static org.junit.Assert.*;
 public class CleanerControllerTest {
         @Autowired
         private TestRestTemplate restTemplate;
-        private static String baseURL = "http://localhost:8090/classroom";
 
-        private static Cleaner cleaner = CleanerFactory.buildCleaner(20,"Nazeerah","Carr","2 Newfields Road");
-        private static Cleaner cleaner1 = CleanerFactory.buildCleaner(21,"Alice","Cooper","105 Headway Street");
+        private static String baseURL = "http://localhost:8090/cleaner";
+
+        private static Cleaner cleaner = CleanerFactory.buildCleaner(21,"Nazeerah","Carr","2 Newfields Road");
+        private static Cleaner cleaner1 = CleanerFactory.buildCleaner(20,"Alice","Cooper","105 Headway Street");
+
+        private static Cleaner newCleaner = new Cleaner.Builder().copy(cleaner).build();
 
         @Test
         public void a_create() {
@@ -44,8 +47,9 @@ public class CleanerControllerTest {
         @Test
         public void b_read(){
             String url = baseURL + "/read/" + cleaner.getCleanerNum();
-            ResponseEntity<Cleaner> response = restTemplate.getForEntity(url,Cleaner.class);
-            assertEquals(cleaner.getCleanerNum(),response.getBody().getCleanerNum());
+            ResponseEntity<Cleaner> response = restTemplate.getForEntity(url, Cleaner.class);
+
+            assertEquals(cleaner.getCleanerNum(), response.getBody().getCleanerNum());
             System.out.println("Read: " + response.getBody());
 
         }
@@ -53,7 +57,7 @@ public class CleanerControllerTest {
         @Test
         public void c_update(){
             String url = baseURL + "/update";
-            Cleaner newCleaner = new Cleaner.Builder().copy(cleaner).build();
+
             ResponseEntity<Cleaner> response = restTemplate.postForEntity(url,newCleaner,Cleaner.class);
             System.out.println("Updated: " + response.getBody());
 
