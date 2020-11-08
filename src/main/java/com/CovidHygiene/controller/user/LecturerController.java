@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@EnableAutoConfiguration
 @RequestMapping("/lecturer")
+
 public class LecturerController {
+
     @Autowired
     private LecturerServiceImpl service;
 
     @PostMapping("/create")
     public Lecturer create (@RequestBody Lecturer lecturer){
-        Lecturer lecturer1 = LecturerFactory.buildLecturer(lecturer.getFirstName(), lecturer.getLastName(), lecturer.getAddress(), lecturer.getLecturerNum());
+        Lecturer lecturer1 = LecturerFactory.buildLecturer(lecturer.getLecturerNum(), lecturer.getFirstName(), lecturer.getLastName(), lecturer.getAddress());
         return service.create(lecturer1);
     }
 
@@ -27,12 +28,23 @@ public class LecturerController {
         return service.read(ID);
     }
 
+<<<<<<< HEAD
     @PostMapping("/update")
     public Lecturer update(@RequestBody Lecturer lecturer){
         return service.update(lecturer);
     }
 
     @PostMapping("/delete/{ID}")
+=======
+
+    @PostMapping("/update")
+    public Lecturer update(@RequestBody Lecturer lecturer){
+
+        return service.update(lecturer);
+    }
+
+    @DeleteMapping("/delete/{ID}")
+>>>>>>> upstream/master
     public String delete(@PathVariable String ID){
         boolean result = service.delete(ID);
         if(result == true){

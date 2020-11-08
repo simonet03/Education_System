@@ -17,19 +17,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringRunner.class)
 public class AdminControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private static String url = "Http://localhost:8080/admin";
+    private static String url = "http://localhost:8090/admin";
 
-   private static Admin admin = new Admin.Builder().setAdminNum("A001").setFirstName("Daphney").setLastName("Kgosiejang").setAddress("Cape Town").build();
-   private static Admin admin2 = new Admin.Builder().setAdminNum("B006").setFirstName("Thabisa").setLastName("Setlhare").setAddress("Bellville").build();
+    private static Admin admin = new Admin.Builder().setAdminNum("A001").setFirstName("Daphney").setLastName("Kgosiejang").setAddress("Cape Town").build();
+    private static Admin admin2 = new Admin.Builder().setAdminNum("B006").setFirstName("Thabisa").setLastName("Setlhare").setAddress("Bellville").build();
 
+    private static Admin admUpdated = AdminFactory.buildAdmin("A001","Rethabile","Sibe","More");
     @Test
     public void a_create() {
         String createUrl = url + "/create";
@@ -44,7 +45,7 @@ public class AdminControllerTest {
 
     @Test
     public void b_read() {
-        String readUrl = url + "read/" + admin.getAdminNum();
+        String readUrl = url + "/read/" + admin.getAdminNum();
         ResponseEntity<Admin> response = restTemplate.getForEntity(readUrl,Admin.class);
 
         assertEquals(admin.getAdminNum(),response.getBody().getAdminNum());
@@ -54,18 +55,19 @@ public class AdminControllerTest {
 
     @Test
     public void c_update() {
-        String updateUrl = url + "update";
-        Admin admUpdated = AdminFactory.buildAdmin("A002","Rethabile","Sibe","More");
+        String updateUrl = url + "/update";
+
         ResponseEntity<Admin> response = restTemplate.postForEntity(updateUrl, admUpdated, Admin.class);
 
         assertNotNull(response);
         assertNotNull(response.getBody());
+
         System.out.println(response.getBody());
     }
 
     @Test
     public void e_getAll() {
-        String getUrl = url + "get/all";
+        String getUrl = url + "getAll";
 
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null,headers);
@@ -78,7 +80,7 @@ public class AdminControllerTest {
 
     @Test
     public void d_delete() {
-        String deleteUrl = url +"delete/" +  admin.getAdminNum();
+        String deleteUrl = url +"/delete/" +  admin.getAdminNum();
         restTemplate.delete(deleteUrl);
 
         System.out.println(deleteUrl);

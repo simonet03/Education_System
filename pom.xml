@@ -46,10 +46,11 @@
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
 
-    <dependency>
+   <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
+
   </dependencies>
 
 
@@ -57,11 +58,6 @@
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
 
       </plugins>
     </pluginManagement>
@@ -75,11 +71,6 @@
                   <target>8</target>
               </configuration>
           </plugin>
-
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-        </plugin>
       </plugins>
   </build>
 </project>

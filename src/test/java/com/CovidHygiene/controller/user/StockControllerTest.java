@@ -3,16 +3,14 @@ package com.CovidHygiene.controller.user;
 import com.CovidHygiene.factory.StockFactory;
 import com.CovidHygiene.entity.Stock;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
@@ -24,12 +22,13 @@ import static org.junit.Assert.*;
 public class StockControllerTest {
     @Autowired
             private TestRestTemplate restTemplate;
-            private static String baseURL = "Http://localhost:8080/classroom";
+            private static String baseURL = "http://localhost:8090/stock";
 
             private static Stock stock = StockFactory.buildStock(50, "Face Masks");
             private static Stock stock1 = StockFactory.buildStock(60,"Hand Sanitizers");
 
             @Test
+            //@Ignore
             public void a_create() {
                 String url = baseURL + "/create";
                 ResponseEntity<Stock> postResponse = restTemplate.postForEntity(url,stock,Stock.class);
@@ -41,15 +40,17 @@ public class StockControllerTest {
             }
 
             @Test
+            //@Ignore
             public void b_read(){
                 String url = baseURL + "/read/" + stock.getStockType();
                 ResponseEntity<Stock> response = restTemplate.getForEntity(url,Stock.class);
-                assertEquals(stock.getStockType(),response.getBody().getStockType());
+                assertEquals(stock.getStockType(), response.getBody().getStockType());
                 System.out.println("Read: " + response.getBody());
 
             }
 
             @Test
+            //@Ignore
             public void c_update(){
                 String url = baseURL + "/update";
                 Stock newStock = new Stock.Builder().copy(stock).build();
@@ -59,6 +60,7 @@ public class StockControllerTest {
             }
 
             @Test
+            //@Ignore
             public void d_getAll() {
                 String url = baseURL + "/getAll";
                 HttpHeaders headers = new HttpHeaders();
@@ -71,6 +73,7 @@ public class StockControllerTest {
             }
 
             @Test
+            //@Ignore
             public void e_StockType(){
                 String url = baseURL + "/getStockType";
                 ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
@@ -79,6 +82,7 @@ public class StockControllerTest {
             }
 
             @Test
+            //@Ignore
             public void f_StockNum(){
                 String url = baseURL + "/getAmountOfStock";
                 ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);

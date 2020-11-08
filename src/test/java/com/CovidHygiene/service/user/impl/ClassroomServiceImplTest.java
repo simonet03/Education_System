@@ -3,11 +3,11 @@ package com.CovidHygiene.service.user.impl;
 import com.CovidHygiene.entity.Classroom;
 import com.CovidHygiene.factory.ClassroomFactory;
 import com.CovidHygiene.service.user.ClassroomService;
-import com.CovidHygiene.service.user.impl.ClassroomServiceImpl;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -15,7 +15,10 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class ClassroomServiceImplTest {
-    private static ClassroomService service= ClassroomServiceImpl.getService();
+
+    @Autowired
+    private ClassroomService service;
+
     private static Classroom classroom = ClassroomFactory.createClassroom(7,true,20,true);
     private static Classroom classroom1 = ClassroomFactory.createClassroom(8,true,20,true);
     private static Classroom classroom2 = ClassroomFactory.createClassroom(9,false,20,true);

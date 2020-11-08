@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/contact")
+@RequestMapping("/educationsystem/contact")
 public class ContactController {
 
     @Autowired

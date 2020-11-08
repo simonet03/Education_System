@@ -1,10 +1,23 @@
 package com.CovidHygiene.entity;
 
-public class Cleaner {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+public class Cleaner implements Serializable {
+
+    @Id
     private long cleanerNum;
     private String firstName;
     private String lastName;
     private String address;
+
+    protected Cleaner(){
+
+    }
 
     public Cleaner(Cleaner.Builder builder){
         this.cleanerNum = builder.cleanerNum;
@@ -40,11 +53,11 @@ public class Cleaner {
     }
 
     public static class Builder{
-        public long cleanerNum;
+        private long cleanerNum;
         private String firstName, lastName, address;
 
-        public Cleaner.Builder setCleanerNum(long CleanerNum){
-            this.cleanerNum = cleanerNum;
+        public Cleaner.Builder setCleanerNum(long number){
+            this.cleanerNum = number;
             return this;
         }
 

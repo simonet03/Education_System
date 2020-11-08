@@ -22,12 +22,13 @@ public class TemperatureController {
     }
 
     @GetMapping("/read/temperature")
-    public Temperature read (@PathVariable String temperature){
-        return  service.read(Double.valueOf(temperature));
+    public Temperature read (@PathVariable Double temperature){
+        return  service.read(temperature);
     }
 
     @PostMapping("/update")
     public Temperature update(@RequestBody Temperature temperature){
+
         return  service.update(temperature);
     }
 

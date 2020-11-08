@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class LecturerServiceImpl implements LecturerService {
-    private static LecturerService service = null;
+
+
     @Autowired
     private LecturerRepository repository;
 

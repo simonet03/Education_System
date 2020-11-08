@@ -8,12 +8,16 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Set;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class StockServiceImplTest {
-    private static StockService stockService = StockServiceImpl.getStockService();
+
+    @Autowired
+    private static StockService stockService;
     private static Stock stock = StockFactory.buildStock(5,"Facemasks");
 
     @Test

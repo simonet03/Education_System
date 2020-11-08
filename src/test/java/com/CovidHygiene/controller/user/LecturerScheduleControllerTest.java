@@ -1,7 +1,6 @@
 package com.CovidHygiene.controller.user;
 
-import com.CovidHygiene.entity.Schedule;
-import com.CovidHygiene.factory.ScheduleFactory;
+import com.CovidHygiene.entity.LecturerSchedule;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,28 +14,24 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalTime;
-
 import static org.junit.Assert.*;
-
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ScheduleControllerTest {
+public class LecturerScheduleControllerTest {
 
-    private static Schedule schedule= ScheduleFactory.buildSchedule(30, LocalTime.of(10,30),LocalTime.of(16,30),true,false);
-
+    private static LecturerSchedule schedule = new LecturerSchedule.Builder().setClassroomNum(32).setLecturerNum("24432").build();
     @Autowired
     private TestRestTemplate restTemplate = null;
-    private String baseURL = "http://localhost:8090/schedule/";
+    private String baseURL = "http://localhost:8090/lecturer_schedule/";
 
     @Test
     public void a_create() {
         String url = baseURL + "create";
         System.out.println("URL: " + url);
         System.out.println("Post data: " + schedule);
-        ResponseEntity<Schedule> postResponse = restTemplate.postForEntity(url, schedule, Schedule.class);
+        ResponseEntity<LecturerSchedule> postResponse = restTemplate.postForEntity(url, schedule, LecturerSchedule.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         schedule = postResponse.getBody();
@@ -60,19 +55,19 @@ public class ScheduleControllerTest {
     public void b_read() {
         String url = baseURL + "read/" + schedule.getClassroomNum();
         System.out.println("URL: " + url);
-        ResponseEntity<Schedule> response = restTemplate.getForEntity(url, Schedule.class);
+        ResponseEntity<LecturerSchedule> response = restTemplate.getForEntity(url, LecturerSchedule.class);
         assertEquals(schedule.getClassroomNum(), response.getBody().getClassroomNum());
     }
 
     @Test
     public void c_update() {
-        Schedule update = new Schedule.ScheduleBuilder().copy(schedule).
-                setBookedForTeach(false).build();
+        LecturerSchedule update = new LecturerSchedule.Builder().copy(schedule).
+                setClassroomNum(43).build();
 
         String url = baseURL + "update";
         System.out.println("URL: " + url);
         System.out.println("Post data: " + update);
-        ResponseEntity<Schedule> response = restTemplate.postForEntity(url, update, Schedule.class);
+        ResponseEntity<LecturerSchedule> response = restTemplate.postForEntity(url, update, LecturerSchedule.class);
         assertNotEquals(schedule, response.getBody());
     }
 
