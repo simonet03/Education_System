@@ -24,7 +24,7 @@ public class LecturerScheduleControllerTest {
     private static LecturerSchedule schedule = new LecturerSchedule.Builder().setClassroomNum(32).setLecturerNum("24432").build();
     @Autowired
     private TestRestTemplate restTemplate = null;
-    private String baseURL = "http://localhost:8080/lecturer_schedule/";
+    private String baseURL = "http://localhost:8090/lecturer_schedule/";
 
     @Test
     public void a_create() {

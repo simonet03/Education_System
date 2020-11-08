@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@EnableAutoConfiguration
-@RequestMapping("/Cleaner")
+@RequestMapping("/cleaner")
 
 public class CleanerController {
         @Autowired

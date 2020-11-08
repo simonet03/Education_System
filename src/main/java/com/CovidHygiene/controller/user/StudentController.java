@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/educationsystem/student")
 public class StudentController {
 
     //if error, annotate @service to impl

@@ -28,7 +28,7 @@ public class StockControllerTest {
             private static Stock stock1 = StockFactory.buildStock(60,"Hand Sanitizers");
 
             @Test
-            @Ignore
+            //@Ignore
             public void a_create() {
                 String url = baseURL + "/create";
                 ResponseEntity<Stock> postResponse = restTemplate.postForEntity(url,stock,Stock.class);
@@ -40,17 +40,17 @@ public class StockControllerTest {
             }
 
             @Test
-            @Ignore
+            //@Ignore
             public void b_read(){
                 String url = baseURL + "/read/" + stock.getStockType();
                 ResponseEntity<Stock> response = restTemplate.getForEntity(url,Stock.class);
-                assertEquals(stock.getStockType(),response.getBody().getStockType());
+                assertEquals(stock.getStockType(), response.getBody().getStockType());
                 System.out.println("Read: " + response.getBody());
 
             }
 
             @Test
-            @Ignore
+            //@Ignore
             public void c_update(){
                 String url = baseURL + "/update";
                 Stock newStock = new Stock.Builder().copy(stock).build();
@@ -60,7 +60,7 @@ public class StockControllerTest {
             }
 
             @Test
-            @Ignore
+            //@Ignore
             public void d_getAll() {
                 String url = baseURL + "/getAll";
                 HttpHeaders headers = new HttpHeaders();
@@ -73,7 +73,7 @@ public class StockControllerTest {
             }
 
             @Test
-            @Ignore
+            //@Ignore
             public void e_StockType(){
                 String url = baseURL + "/getStockType";
                 ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
@@ -82,7 +82,7 @@ public class StockControllerTest {
             }
 
             @Test
-            @Ignore
+            //@Ignore
             public void f_StockNum(){
                 String url = baseURL + "/getAmountOfStock";
                 ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);

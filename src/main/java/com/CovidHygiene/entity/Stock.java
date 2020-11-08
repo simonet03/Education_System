@@ -6,7 +6,6 @@ import javax.persistence.IdClass;
 import java.io.Serializable;
 
 @Entity
-@IdClass(Stock.class)
 public class Stock implements Serializable {
 
     @Id

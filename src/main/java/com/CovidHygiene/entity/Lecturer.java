@@ -51,23 +51,23 @@ public class Lecturer {
 
 
     public static class Builder{
-        public String lecturerNum;
-        public String firstName, lastName, address;
+        private String lecturerNum;
+        private String firstName, lastName, address;
 
-        public Builder setLecturerNum(String lecturerNum){
-            this.lecturerNum = lecturerNum;
+        public Builder setLecturerNum(String id){
+            this.lecturerNum = id;
             return this;
         }
-        public Builder setFirstName(String firstName){
-            this.firstName = firstName;
+        public Builder setFirstName(String name){
+            this.firstName = name;
             return this;
         }
-        public Builder setLastName(String lastName){
-            this.lastName = lastName;
+        public Builder setLastName(String surname){
+            this.lastName = surname;
             return this;
         }
-        public Builder setAddress(String address){
-            this.address = address;
+        public Builder setAddress(String addr){
+            this.address = addr;
             return this;
         }
 

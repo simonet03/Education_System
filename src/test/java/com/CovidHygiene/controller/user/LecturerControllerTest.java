@@ -1,6 +1,7 @@
 package com.CovidHygiene.controller.user;
 
 import com.CovidHygiene.entity.Lecturer;
+import com.CovidHygiene.factory.LecturerFactory;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,16 +26,16 @@ public class LecturerControllerTest {
 
         @Autowired
         private TestRestTemplate restTemplate;
-        private String url = "http://localhost:8080/lecturer/";
+        private String url = "http://localhost:8090/lecturer/";
 
 
-        private static Lecturer lecturer = new Lecturer.Builder().setFirstName("Jack").setLastName("Chris").setAddress("Western Cape").build();
+        private static Lecturer lecturer = LecturerFactory.buildLecturer("1234", "name", "lastname", "meh");
 
-        Lecturer updateLecturer = new Lecturer.Builder().copy(lecturer).setFirstName("Jackson").build();
+        private static Lecturer updateLecturer = new Lecturer.Builder().copy(lecturer).setFirstName("Jackson").build();
 
     @Test
     public void a_create() {
-        String createUrl = url + "created";
+        String createUrl = url + "create";
 
         ResponseEntity<Lecturer> response = restTemplate.postForEntity(createUrl, lecturer, Lecturer.class);
 
