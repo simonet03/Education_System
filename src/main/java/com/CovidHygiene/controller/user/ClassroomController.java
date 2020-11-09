@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/classroom")
+@RequestMapping("educationsystem/classroom")
 public class ClassroomController {
 
     @Autowired

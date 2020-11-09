@@ -16,6 +16,7 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
 
     public static final String User_Role = "User";
     public static final String Admin_Role = "Admin";
+    public static final String Teacher_Role ="Teacher";
 
     //authenticate user roles here
     @Override
@@ -24,14 +25,19 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
                 //ADMIN
                 .withUser("admin")
                 .password(encoder().encode("123"))
-                .roles(Admin_Role, User_Role)
+                .roles(Admin_Role, User_Role, Teacher_Role)
 
                 //add more than one user
         .and()
 
                 .withUser("user")
                 .password(encoder().encode("456"))
-                .roles(User_Role);
+                .roles(User_Role)
+         .and()
+
+                .withUser("Teacher")
+                .password(encoder().encode("Password9"))
+                .roles(Teacher_Role);
     }
 
     //assign user rights here
@@ -41,9 +47,10 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/educationsystem/**/create", "/educationsystem/**/update").hasRole(Admin_Role)
+                .antMatchers(HttpMethod.POST, "/educationsystem/**/create", "/educationsystem/**/update").hasAnyRole(Admin_Role)
                 .antMatchers(HttpMethod.DELETE,  "/educationsystem/**/delete/**").hasRole(Admin_Role)
-                .antMatchers(HttpMethod.GET, "/educationsystem/**/read/**", "/educationsystem/**/getAll/**", "/educationsystem/**/get/**").hasRole(User_Role)
+                .antMatchers(HttpMethod.GET, "/educationsystem/**/read/**", "/educationsystem/**/getAll/**", "/educationsystem/**/get/**","/educationsystem/**/getAllBookedClassrooms/**","/educationsystem/**/getAllNotBookedClassrooms/**","/educationsystem/**/getAllSanitizedClassrooms/**","/educationsystem/**/getAllNotSanitizedClassrooms/**").hasAnyRole(User_Role,Teacher_Role)
+                .antMatchers(HttpMethod.POST,  "/educationsystem/**/update").hasAnyRole(Teacher_Role)
                 .and()
                 .csrf().disable(); /**disable cross referencing**/
 
