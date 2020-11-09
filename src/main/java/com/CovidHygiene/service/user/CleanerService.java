@@ -1,6 +1,6 @@
 package com.CovidHygiene.service.user;
+
 import com.CovidHygiene.entity.Cleaner;
-import com.CovidHygiene.repository.user.CleanerRepository;
 import com.CovidHygiene.service.IService;
 
 import java.util.Set;
