@@ -28,7 +28,6 @@ public class LecturerControllerTest {
         private static String USER = "admin";
         private static String PASSWORD = "123";
 
-<<<<<<< HEAD
 
         private static Lecturer lecturer = LecturerFactory.buildLecturer("1234567", "Jack", "Chris", "Western Cape");
         private static Lecturer lecturer1 = LecturerFactory.buildLecturer("1234568", "John", "McLain", "New York");
@@ -45,7 +44,7 @@ public class LecturerControllerTest {
         ResponseEntity<Lecturer> response1 = restTemplate
                 .withBasicAuth(USER, PASSWORD)
                 .postForEntity(createUrl, lecturer1, Lecturer.class);
-=======
+
         private static Lecturer lecturer = LecturerFactory.buildLecturer("1234", "name", "lastname", "meh");
 
         private static Lecturer updateLecturer = new Lecturer.Builder().copy(lecturer).setFirstName("Jackson").build();
@@ -56,7 +55,7 @@ public class LecturerControllerTest {
 
         ResponseEntity<Lecturer> response = restTemplate.postForEntity(createUrl, lecturer, Lecturer.class);
 
->>>>>>> upstream/master
+
         assertNotNull(response);
         assertNotNull(response.getBody());
         assertNotNull(response1);
