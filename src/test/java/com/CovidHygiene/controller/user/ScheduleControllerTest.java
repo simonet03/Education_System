@@ -29,7 +29,7 @@ public class ScheduleControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate = null;
-    private String baseURL = "http://localhost:8080/schedule/";
+    private String baseURL = "http://localhost:8090/schedule/";
 
     @Test
     public void a_create() {

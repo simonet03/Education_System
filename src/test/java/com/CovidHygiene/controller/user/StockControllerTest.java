@@ -3,7 +3,6 @@ package com.CovidHygiene.controller.user;
 import com.CovidHygiene.factory.StockFactory;
 import com.CovidHygiene.entity.Stock;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -15,79 +14,102 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class StockControllerTest {
     @Autowired
             private TestRestTemplate restTemplate;
-            private static String baseURL = "http://localhost:8090/stock";
+            private  String url = "http://localhost:8090/educationsystem/stock/";
+
+
+            private static String USER = "admin";
+            private static String PASSWORD = "123";
 
             private static Stock stock = StockFactory.buildStock(50, "Face Masks");
             private static Stock stock1 = StockFactory.buildStock(60,"Hand Sanitizers");
 
             @Test
-            @Ignore
             public void a_create() {
-                String url = baseURL + "/create";
-                ResponseEntity<Stock> postResponse = restTemplate.postForEntity(url,stock,Stock.class);
-                ResponseEntity<Stock> postResponse1 = restTemplate.postForEntity(url,stock1,Stock.class);
-                assertNotNull(postResponse);
-                assertNotNull(postResponse.getBody());
+                String createUrl = url + "create";
 
-                System.out.println("Created Stock:\n" + postResponse.getBody() + postResponse1.getBody());
+                        ResponseEntity<Stock> response = restTemplate
+                                .withBasicAuth(USER, PASSWORD)
+                                .postForEntity(createUrl, stock, Stock.class);
+
+                        assertNotNull(response);
+                        assertNotNull(response.getBody());
+                        assertEquals(HttpStatus.valueOf(200), response.getStatusCode());
+
+                        System.out.println(response.getBody());
+                        System.out.println("Status code: " + response.getStatusCode());
             }
 
             @Test
-            @Ignore
             public void b_read(){
-                String url = baseURL + "/read/" + stock.getStockType();
-                ResponseEntity<Stock> response = restTemplate.getForEntity(url,Stock.class);
-                assertEquals(stock.getStockType(),response.getBody().getStockType());
-                System.out.println("Read: " + response.getBody());
+               String readUrl = url + "read/" + stock.getNumOfStock();
+
+                        ResponseEntity<Stock> response = restTemplate
+                                .withBasicAuth(USER, PASSWORD)
+                                .getForEntity(readUrl, Stock.class);
+
+                        assertEquals(stock.getNumOfStock(), response.getBody().getNumOfStock());
+                        assertEquals(HttpStatus.valueOf(200), response.getStatusCode());
+
+                        System.out.println(response.getBody());
+                        System.out.println("Status code: " + response.getStatusCode());
 
             }
 
             @Test
-            @Ignore
             public void c_update(){
-                String url = baseURL + "/update";
-                Stock newStock = new Stock.Builder().copy(stock).build();
-                ResponseEntity<Stock> response = restTemplate.postForEntity(url,newStock,Stock.class);
-                System.out.println("Updated: " + response.getBody());
+                String updateUrl = url + "update";
 
+                        Stock stockUpdated = StockFactory.buildStock(50, "Face Masks");
+
+                        ResponseEntity<Stock> response = restTemplate
+                                .withBasicAuth(USER, PASSWORD)
+                                .postForEntity(updateUrl, stockUpdated, Stock.class);
+
+                        assertNotNull(response);
+                        assertNotNull(response.getBody());
+                        assertEquals(HttpStatus.valueOf(200), response.getStatusCode());
+
+                        System.out.println(response.getBody().toString());
+                        System.out.println("Status code: " + response.getStatusCode());
             }
 
             @Test
-            @Ignore
+            public void e_delete() {
+                String deleteUrl = url + "delete/" + stock.getNumOfStock();
+
+                System.out.println(deleteUrl);
+
+                restTemplate
+                        .withBasicAuth(USER, PASSWORD)
+                        .delete(deleteUrl);
+                            d_getAll();
+        }
+
+            @Test
             public void d_getAll() {
-                String url = baseURL + "/getAll";
+                String getUrl = url + "get/all";
+
                 HttpHeaders headers = new HttpHeaders();
-                HttpEntity<String> entity = new HttpEntity<>(null,headers);
-                ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET,entity,String.class);
+                HttpEntity<String> entity = new HttpEntity<>(null, headers);
+
+                ResponseEntity<String> response = restTemplate
+                        .withBasicAuth(USER, PASSWORD)
+                        .exchange(getUrl, HttpMethod.GET, entity, String.class);
+
                 assertNotNull(response);
                 assertNotNull(response.getBody());
+                assertEquals(HttpStatus.valueOf(200), response.getStatusCode());
 
-                System.out.println("Get All: \n" + response.getBody());
-            }
-
-            @Test
-            @Ignore
-            public void e_StockType(){
-                String url = baseURL + "/getStockType";
-                ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
-                System.out.println("Get type of stock: \n" + response.getBody());
-
-            }
-
-            @Test
-            @Ignore
-            public void f_StockNum(){
-                String url = baseURL + "/getAmountOfStock";
-                ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
-                System.out.println("Get amount of stock: \n" + response.getBody());
-
+                System.out.println(response.getBody());
+                System.out.println("Status code: " + response.getStatusCode());
             }
 
 }

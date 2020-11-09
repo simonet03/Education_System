@@ -4,14 +4,16 @@ import com.CovidHygiene.entity.Admin;
 import com.CovidHygiene.factory.AdminFactory;
 import com.CovidHygiene.service.user.impl.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
+
+
+@RestController
+@RequestMapping("/admin")
 public class AdminController {
+
     @Autowired
     private AdminServiceImpl adminService;
 
@@ -36,7 +38,7 @@ public class AdminController {
         return adminService.getAll();
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable String id){
         return adminService.delete(id);
     }

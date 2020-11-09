@@ -9,7 +9,7 @@ public class LecturerSchedule {
     @Id
     private String lecturerNum;
 
-    public LecturerSchedule() {}
+    protected LecturerSchedule() {}
 
     public LecturerSchedule(Builder builder) {
         this.classroomNum = builder.classroomNum;

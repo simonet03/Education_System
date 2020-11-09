@@ -29,7 +29,7 @@ public class ClassroomControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private static String baseURL = "Http://localhost:8080/classroom";
+    private static String baseURL = "Http://localhost:8090/classroom";
 
     private static Classroom classroom = ClassroomFactory.createClassroom(7,true,25,false);
     private static Classroom classroom1 = ClassroomFactory.createClassroom(8,true,30,true);

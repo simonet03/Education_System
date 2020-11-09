@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    private static AdminService service = null;
     @Autowired
     private AdminRepository repository;
 
@@ -42,9 +41,9 @@ public class AdminServiceImpl implements AdminService {
      public boolean delete(String a) {
         this.repository.deleteById(a);
         if(this.repository.existsById(a)) return false;
-        else return true;
-            }
-        }
+        return true;
+    }
+}
 
 
 

@@ -11,39 +11,39 @@ import java.util.Set;
 @RequestMapping("/Stock")
 
 public class StockController {
+
         @Autowired
-        private StockServiceImpl stockService;
+        private StockServiceImpl service;
 
         @PostMapping("/create")
         public Stock create(@RequestBody Stock stock) {
 
             Stock s = StockFactory.buildStock(stock.getNumOfStock(), stock.getStockType());
-            return stockService.create(s);
+            return service.create(s);
     }
 
         @GetMapping("/read/{id}")
         public Stock read(@PathVariable String id) {
 
-            return stockService.read(id);
+            return service.read(id);
         }
 
         @PostMapping("/update")
         public Stock update(@RequestBody Stock stock) {
 
-            return stockService.update(stock);
+            return service.update(stock);
         }
-
 
         @DeleteMapping("/delete/{id}")
         public boolean delete(@PathVariable String id) {
 
-            return stockService.delete(id);
+            return service.delete(id);
         }
 
     @GetMapping("/getAll")
     public Set<Stock> getAll() {
 
-        return stockService.getAll();
+        return service.getAll();
     }
 
 }
