@@ -54,7 +54,7 @@ public class LecturerControllerTest {
 
         lecturer = response.getBody();
         lecturer1 = response1.getBody();
-        
+
         System.out.println(response.getBody());
         System.out.println(response1.getBody());
         System.out.println("Status code: " + response.getStatusCode());
