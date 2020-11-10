@@ -28,7 +28,10 @@ public class LecturerController {
         return service.read(ID);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 
     @PostMapping("/update")
     public Lecturer update(@RequestBody Lecturer lecturer){
@@ -37,6 +40,10 @@ public class LecturerController {
     }
 
     @DeleteMapping("/delete/{ID}")
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
     public String delete(@PathVariable String ID){
         boolean result = service.delete(ID);
         if(result == true){

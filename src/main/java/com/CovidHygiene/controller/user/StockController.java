@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/stock")
+@RequestMapping("/Stock")
 
 public class StockController {
 
@@ -34,16 +34,16 @@ public class StockController {
             return service.update(stock);
         }
 
-        @GetMapping("/getAll")
-        public Set<Stock> getAll() {
-
-            return service.getAll();
-        }
-
         @DeleteMapping("/delete/{id}")
         public boolean delete(@PathVariable String id) {
 
             return service.delete(id);
         }
+
+    @GetMapping("/getAll")
+    public Set<Stock> getAll() {
+
+        return service.getAll();
+    }
 
 }

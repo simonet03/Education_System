@@ -2,8 +2,8 @@ package com.CovidHygiene.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 public class Stock implements Serializable {
@@ -33,6 +33,18 @@ public class Stock implements Serializable {
                 "NumOfStock=" + numOfStock +
                 ", StockType='" + stockType + '\''+ '}';
     }
+
+     @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Stock stock = (Stock) o;
+            return stock.equals(stock.numOfStock);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(numOfStock, stockType);}
 
     public static class Builder{
         public long numOfStock;

@@ -4,13 +4,12 @@ import com.CovidHygiene.entity.Cleaner;
 import com.CovidHygiene.service.user.impl.CleanerServiceImpl;
 import com.CovidHygiene.factory.CleanerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
-@RequestMapping("/cleaner")
+@RequestMapping("/Cleaner")
 
 public class CleanerController {
         @Autowired
@@ -36,15 +35,14 @@ public class CleanerController {
                     return cleanerService.update(cleaner);
                 }
 
-                @GetMapping("/getAll")
-                public Set<Cleaner> getAll() {
-
-                    return cleanerService.getAll();
-                }
-
                 @DeleteMapping("/delete/{id}")
                 public boolean delete(@PathVariable Long id) {
 
                     return cleanerService.delete(id);
                 }
+
+                 @GetMapping("/get/all")
+        public Set<Cleaner> getAll(){
+            return cleanerService.getAll();
+        }
 }
