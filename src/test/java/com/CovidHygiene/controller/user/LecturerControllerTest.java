@@ -28,46 +28,31 @@ public class LecturerControllerTest {
         private static String USER = "admin";
         private static String PASSWORD = "123";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
-
         private static Lecturer lecturer = LecturerFactory.buildLecturer("1234567", "Jack", "Chris", "Western Cape");
         private static Lecturer lecturer1 = LecturerFactory.buildLecturer("1234568", "John", "McLain", "New York");
 
         Lecturer updatedLect = new Lecturer.Builder().copy(lecturer).setFirstName("Jack").build();
 
+
     @Test
     public void a_create() {
-        String createUrl = url + "/created";
+        String createUrl = url + "create";
 
         ResponseEntity<Lecturer> response = restTemplate
                 .withBasicAuth(USER, PASSWORD)
                 .postForEntity(createUrl, lecturer, Lecturer.class);
         ResponseEntity<Lecturer> response1 = restTemplate
                 .withBasicAuth(USER, PASSWORD)
-                .postForEntity(createUrl, lecturer1, Lecturer.class);
-<<<<<<< HEAD
-=======
-
-        private static Lecturer lecturer = LecturerFactory.buildLecturer("1234", "name", "lastname", "meh");
-
-        private static Lecturer updateLecturer = new Lecturer.Builder().copy(lecturer).setFirstName("Jackson").build();
-
-    @Test
-    public void a_create() {
-        String createUrl = url + "create";
-
-        ResponseEntity<Lecturer> response = restTemplate.postForEntity(createUrl, lecturer, Lecturer.class);
+                .postForEntity(createUrl, lecturer, Lecturer.class);
 
 
->>>>>>> upstream/master
+
         assertNotNull(response);
         assertNotNull(response.getBody());
 
-        assertNotNull(response1);
+        assertNotNull(response);
         assertNotNull(response1.getBody());
+
         assertEquals(HttpStatus.valueOf(200), response.getStatusCode());
 
         lecturer = response.getBody();
