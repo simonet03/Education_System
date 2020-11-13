@@ -36,7 +36,6 @@ public class LecturerController {
     }
 
     @DeleteMapping("/delete/{ID}")
-
     public String delete(@PathVariable String ID){
         boolean result = service.delete(ID);
         if(result == true){
